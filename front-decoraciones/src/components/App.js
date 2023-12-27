@@ -6,8 +6,9 @@ import Home from './specific/Home';
 import Catalog from './specific/Catalog';
 import Services from './specific/Services';
 import ContactUs from './specific/ContactUs';
-
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../styles/App.css'
 
 function App() {
   return (

@@ -1,35 +1,37 @@
 import React from 'react';
-import { Navbar, NavbarBrand, Nav, NavItem } from 'reactstrap';
+import { Navbar, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import {faHome, faList, faWrench, faComments } from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 const Header = () => {
     return (
-        <Navbar>
-            <NavbarBrand className='mr-auto' href='/'>
-                <img src={"/public/logo512.png"} height='31.5' alt='small-company-logo' />
-            </NavbarBrand>
+        <Navbar className="app-bg-primary">
+            <Navbar.Brand className='mr-auto' href='/'>
+                <img src={"https://www.zarla.com/images/zarla-aura-pop-1x1-2400x2400-20210614-9374fqjfdqb9wjfddjgq.png?crop=1:1,smart&width=250&dpr=2"} height='31.5' alt='small-company-logo' />
+            </Navbar.Brand>
             <Nav className="ml-auto" navbar>
-                        <NavItem className="d-flex align-items-center">
+                        <Nav.Item className="d-flex align-items-center">
                             <Link className='nav-link' to='/'>
-                                <span className='fa fa-home fa-lg'>inicio</span>
+                                <FontAwesomeIcon icon={faHome}/><span >inicio</span>
                             </Link>
-                        </NavItem>
-                        <NavItem className="d-flex align-items-center">
+                        </Nav.Item>
+                        <Nav.Item className="d-flex align-items-center">
                             <Link className='nav-link' to='/catalogo'>
-                                <span className='fa fa-list fa-lg'>catalogo</span>
+                                <FontAwesomeIcon icon={faList}/><span >catalogo</span>
                             </Link>
-                        </NavItem>
-                        <NavItem className="d-flex align-items-center">
+                        </Nav.Item>
+                        <Nav.Item className="d-flex align-items-center">
                             <Link className='nav-link' to='/servicios'>
-                                <span className='fa fa-list fa-lg'>servicios</span>
+                            <FontAwesomeIcon icon={faWrench}/><span >servicios</span>
                             </Link>
-                        </NavItem>
-                        <NavItem className="d-flex align-items-center">
+                        </Nav.Item>
+                        <Nav.Item className="d-flex align-items-center">
                             <Link className='nav-link' to='/contactanos'>
-                                <span className='fa fa-address-card fa-lg'>contactanos</span>
+                            <FontAwesomeIcon icon={faComments}/><span >contactanos</span>
                             </Link>
-                        </NavItem>
+                        </Nav.Item>
                     </Nav>
         </Navbar>
     )
