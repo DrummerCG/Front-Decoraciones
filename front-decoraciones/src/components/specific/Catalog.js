@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import ProductPreview from "./products/productPreview";
 
 const SearchResults = ({products}) => {
@@ -9,27 +10,26 @@ const SearchResults = ({products}) => {
     )));
 }
 const Catalog = () => {
+    const [products, setProducts] = useState([]);
     const [isOpen, changeIsOpen] = useState(true);
-    const products = [
-        {
-            _id:"7ttfyyffyfy",
-            name: "cortina Corrediza",
-            description: "producto fabricado con finos cabellos de la peluca de la nina del aro",
-            image: "https://th.bing.com/th/id/OIP.MCXu9YhM-RnPaWbU6mOdOQHaE8?rs=1&pid=ImgDetMain"
-        },
-        {
-            _id:"huggfhdgdf",
-            name: "cortina con motor",
-            description: "producto fabricado con finos cabellos de la peluca de la nina del aro",
-            image: "https://th.bing.com/th/id/OIP.MCXu9YhM-RnPaWbU6mOdOQHaE8?rs=1&pid=ImgDetMain"
-        }
-    ];
+
+    useEffect(() => {
+        // Realiza la solicitud al montar el componente
+        axios.get("http://localhost:3001/productos")
+          .then(response => {
+            setProductos(response.data); // Actualiza el estado con los datos obtenidos
+          })
+          .catch(error => {
+            console.error("Error al obtener los productos:", error);
+          });
+      }, []); // El segundo argumento vacío asegura que se ejecute solo una vez al montar el componente
+    
     return (
         <div className="container">
             <div id='formulario de busqueda' className="row">
                 <p>catalogo</p>
                 <label>{"AHHHHHHHH" + isOpen}</label>
-                <button onClick={() => { changeIsOpen(!isOpen) }}>Cambiar isopem</button>
+                <button onClick={() => { changeIsOpen(!isOpen) }}>Cambiar isopen</button>
             </div>
             <div id="resultado de busqueda" className="row">
                 <SearchResults products={products}/>
