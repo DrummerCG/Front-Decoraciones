@@ -17,12 +17,12 @@ const Catalog = () => {
         // Realiza la solicitud al montar el componente
         axios.get("http://localhost:3001/productos")
           .then(response => {
-            setProductos(response.data); // Actualiza el estado con los datos obtenidos
+            setProducts(response.data); // Actualiza el estado con los datos obtenidos
           })
           .catch(error => {
             console.error("Error al obtener los productos:", error);
           });
-      }, []); // El segundo argumento vacío asegura que se ejecute solo una vez al montar el componente
+      }, [products]); // El segundo argumento vacío asegura que se ejecute solo una vez al montar el componente
     
     return (
         <div className="container">
