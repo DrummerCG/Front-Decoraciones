@@ -1,31 +1,21 @@
 import React, { useState } from "react";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import Modal from 'react-bootstrap/Modal';
+import Card from 'react-bootstrap/Card';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
-    const [show, setShow] = useState(false);
-
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
 
     return (
-        <>
-            <Button
-                variant="primary" onClick={handleShow}>
-                Iniciar Sesión
-            </Button>
-
-            <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Iniciar Sesión</Modal.Title>
-
-                </Modal.Header>
-                <Modal.Body>
+        <div className="d-flex align-items-center flex-grow-1 justify-content-center mb-3 mt-3">
+            <Card>
+                <Card.Header closeButton>
+                    <Card.Title>Iniciar Sesión</Card.Title>
+                </Card.Header>
+                <Card.Body>
                     <Form>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Label>Correo
-                                electrónico</Form.Label>
+                            <Form.Label>Email</Form.Label>
                             <Form.Control type="email" placeholder="Enter email" />
                         </Form.Group>
 
@@ -37,27 +27,26 @@ const Login = () => {
                         <Form.Group className="mb-3">
                             <Form.Check type="checkbox"
                                 label="Recordar contraseña" />
+                                <Link to="/password-recover">
+                                    <a style={{ color: 'black' }}>olvidaste tu contrasena?</a>
+                                </Link>
                         </Form.Group>
-                        <Button variant="primary" type="submit">
-                            Iniciar Sesión
-                        </Button>
+                        <div className="d-flex justify-content-center">
+                            <div className="row">
+                                <Link to="/sign-in">
+                                    <a style={{ color: 'black' }}>registrate</a>
+                                </Link>
+                            </div>
+                            <div className="row">
+                                <Button variant="primary" type="submit">
+                                    Iniciar Sesión
+                                </Button>
+                            </div>
+                        </div>
                     </Form>
-
-                    <p>O inicia sesión con:</p>
-                    <Button variant="outline-google">
-                        <i className="bi bi-google"></i> Iniciar sesión con Google
-                    </Button>
-                    <Button variant="outline-facebook">
-                        <i className="bi bi-facebook"></i> Iniciar sesión con Facebook
-                    </Button>
-                </Modal.Body>
-                <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
-                        Cerrar
-                    </Button>
-                </Modal.Footer>
-            </Modal>
-        </>
+                </Card.Body>
+            </Card>
+        </div>
     );
 
 }
