@@ -1,5 +1,4 @@
 import logo from '../logo.svg';
-import '../styles/App.css';
 import Header from './base/Header';
 import Footer from './base/Footer';
 import Home from './specific/Home';
