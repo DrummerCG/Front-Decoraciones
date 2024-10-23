@@ -24,7 +24,7 @@ const Home = () => {
         </Carousel.Item>
         <Carousel.Item>
           <img className='CarouselItemImage'
-            src="/cortina1.jpg"
+            src="/cortina3.jpg"
             alt="Segunda imagen"
           />
           <Carousel.Caption>
