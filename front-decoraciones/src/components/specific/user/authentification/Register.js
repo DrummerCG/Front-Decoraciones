@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
@@ -104,7 +104,75 @@ const CheckBoxWrapper = styled.div`
   }
 `;
 
+const ErrorMessage = styled.div`
+  color: red;
+  margin-bottom: 0.5rem;
+`;
+
 const Register = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    id: '',
+    phone: '',
+    address: '',
+    city: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+    terms: false,
+  });
+
+  const [errors, setErrors] = useState({});
+
+  const handleChange = (e) => {
+    const { id, value, type, checked } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [id]: type === 'checkbox' ? checked : value,
+    }));
+  };
+
+  const validateForm = () => {
+    const newErrors = {};
+    if (!formData.name) newErrors.name = 'El nombre es obligatorio';
+    if (!formData.id) newErrors.id = 'El documento / ID es obligatorio';
+    if (!formData.phone) {
+      newErrors.phone = 'El teléfono es obligatorio';
+    } else if (!/^\d{10}$/.test(formData.phone)) {
+      newErrors.phone = 'El teléfono debe tener 10 dígitos';
+    }
+    if (!formData.address) newErrors.address = 'La dirección es obligatoria';
+    if (!formData.city) newErrors.city = 'La ciudad es obligatoria';
+    if (!formData.email) {
+      newErrors.email = 'El correo electrónico es obligatorio';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = 'El correo electrónico no es válido';
+    }
+    if (!formData.password) {
+      newErrors.password = 'La contraseña es obligatoria';
+    } else if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(formData.password)) {
+      newErrors.password = 'La contraseña debe tener al menos 8 caracteres, incluyendo una letra mayúscula, una letra minúscula, un número y un carácter especial';
+    }
+    if (!formData.confirmPassword) {
+      newErrors.confirmPassword = 'La confirmación de la contraseña es obligatoria';
+    } else if (formData.password !== formData.confirmPassword) {
+      newErrors.confirmPassword = 'Las contraseñas no coinciden';
+    }
+    if (!formData.terms) newErrors.terms = 'Debe aceptar los términos y condiciones';
+    return newErrors;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const validationErrors = validateForm();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+    } else {
+      console.log(formData);
+      // Aquí puedes hacer la petición con axios
+    }
+  };
+
   return (
     <RegisterContainer>
       <Card>
@@ -113,42 +181,51 @@ const Register = () => {
           <Heading2>Regístrate...</Heading2>
         </CardHeader>
         <CardBody>
-          <form>
+          <form onSubmit={handleSubmit}>
             <FormGroup>
               <label htmlFor="name">Nombre(s) y Apellidos*</label>
-              <FormControl type="text" id="name" placeholder="Introduce tu nombre" />
+              <FormControl type="text" id="name" placeholder="Introduce tu nombre" value={formData.name} onChange={handleChange} />
+              {errors.name && <ErrorMessage>{errors.name}</ErrorMessage>}
             </FormGroup>
             <FormGroup>
               <label htmlFor="id">Documento / ID*</label>
-              <FormControl type="text" id="id" placeholder="Digita tu número de identidad" />
+              <FormControl type="text" id="id" placeholder="Digita tu número de identidad" value={formData.id} onChange={handleChange} />
+              {errors.id && <ErrorMessage>{errors.id}</ErrorMessage>}
             </FormGroup>
             <FormGroup>
               <label htmlFor="phone">Teléfono*</label>
-              <FormControl type="tel" id="phone" placeholder="Digita tu número telefónico" />
+              <FormControl type="tel" id="phone" placeholder="Digita tu número telefónico" value={formData.phone} onChange={handleChange} />
+              {errors.phone && <ErrorMessage>{errors.phone}</ErrorMessage>}
             </FormGroup>
             <FormGroup>
               <label htmlFor="address">Dirección / Barrio*</label>
-              <FormControl type="text" id="address" placeholder="Digita tu ubicación local" />
+              <FormControl type="text" id="address" placeholder="Digita tu ubicación local" value={formData.address} onChange={handleChange} />
+              {errors.address && <ErrorMessage>{errors.address}</ErrorMessage>}
             </FormGroup>
             <FormGroup>
               <label htmlFor="city">Ciudad / Departamento*</label>
-              <FormControl type="text" id="city" placeholder="Digita tu ciudad y departamento" />
+              <FormControl type="text" id="city" placeholder="Digita tu ciudad y departamento" value={formData.city} onChange={handleChange} />
+              {errors.city && <ErrorMessage>{errors.city}</ErrorMessage>}
             </FormGroup>
             <FormGroup>
               <label htmlFor="email">Email*</label>
-              <FormControl type="email" id="email" placeholder="digitaaquí@tucorreo.com" />
+              <FormControl type="email" id="email" placeholder="digitaaquí@tucorreo.com" value={formData.email} onChange={handleChange} />
+              {errors.email && <ErrorMessage>{errors.email}</ErrorMessage>}
             </FormGroup>
             <FormGroup>
               <label htmlFor="password">Contraseña*</label>
-              <FormControl type="password" id="password" placeholder="Digita tu contraseña" />
+              <FormControl type="password" id="password" placeholder="Digita tu contraseña" value={formData.password} onChange={handleChange} />
+              {errors.password && <ErrorMessage>{errors.password}</ErrorMessage>}
             </FormGroup>
             <FormGroup>
               <label htmlFor="confirmPassword">Confirmar Contraseña*</label>
-              <FormControl type="password" id="confirmPassword" placeholder="Confirma tu contraseña" />
+              <FormControl type="password" id="confirmPassword" placeholder="Confirma tu contraseña" value={formData.confirmPassword} onChange={handleChange} />
+              {errors.confirmPassword && <ErrorMessage>{errors.confirmPassword}</ErrorMessage>}
             </FormGroup>
             <CheckBoxWrapper>
-              <input type="checkbox" id="terms" />
+              <input type="checkbox" id="terms" checked={formData.terms} onChange={handleChange} />
               <label htmlFor="terms">Acepto los Términos y condiciones</label>
+              {errors.terms && <ErrorMessage>{errors.terms}</ErrorMessage>}
             </CheckBoxWrapper>
             <ActionGroup>
               <ButtonPrimary type="submit">
