@@ -24,3 +24,29 @@
   text-decoration: underline;
   cursor: pointer;
 }
+
+.ListItem {
+  margin-bottom: 0.5rem;
+}
+
+.Link {
+  color: white;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.WhatsappButton {
+  background-color: #008069; /* Color especificado */
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 50px; /* Botón redondeado */
+  cursor: pointer;
+  margin-top: 1rem;
+
+  &:hover {
+    background-color: #005a4b; /* Un verde ligeramente más oscuro al pasar el cursor */
+  }
+}
