@@ -8,9 +8,12 @@ import '../../styles/specific/Home.css';
 const Home = () => {
   return (
     <div className="HomeContainer">
-      <h1>Decoraciones Ortiz</h1>
-      <h5>Distribuidor oficial</h5>
-      <p>Nuestras cortinas blackout, están diseñadas para ofrecer la máxima privacidad y control de luz en cualquier lugar o espacio.</p>
+      <img className='imagenfondo'
+            src="/oip.jpeg"
+            alt="imagen de fondo" />
+      <h1 className="Empresa">Decoraciones Ortiz</h1>
+      <h5 className="DistribuidorO">Distribuidor oficial</h5>
+      <h6 className="Descrip">Nuestras cortinas blackout, están diseñadas para ofrecer la máxima privacidad y control de luz en cualquier lugar o espacio.</h6>
       <button className="Button">Asesorías</button>
       <Carousel className="HomeCarousel" interval={3000} indicators={true} controls={true}>
         <Carousel.Item>
@@ -24,7 +27,7 @@ const Home = () => {
         </Carousel.Item>
         <Carousel.Item>
           <img className='CarouselItemImage'
-            src="/oip.jpeg"
+            src="/cortina2.jpg"
             alt="Segunda imagen"
           />
           <Carousel.Caption>
@@ -33,7 +36,7 @@ const Home = () => {
         </Carousel.Item>
         <Carousel.Item>
           <img className='CarouselItemImage'
-            src="/cortina1.jpg"
+            src="/cortina3.jpg"
             alt="Tercera imagen"
           />
           <Carousel.Caption>
@@ -42,7 +45,7 @@ const Home = () => {
         </Carousel.Item>
         <Carousel.Item>
           <img className='CarouselItemImage'
-            src="/cortina2.jpg"
+            src="/cortina4.jpg"
             alt="Cuarta imagen"
           />
           <Carousel.Caption>
@@ -51,7 +54,7 @@ const Home = () => {
         </Carousel.Item>
         <Carousel.Item>
           <img className='CarouselItemImage'
-            src="/cortina1.jpg"
+            src="/cortina5.jpg"
             alt="Quinta imagen"
           />
           <Carousel.Caption>

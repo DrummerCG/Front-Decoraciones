@@ -24,8 +24,8 @@ const UserOptions = () => {
     }
     return (
         <>
-            <Button className='me-3' id='app-sign-in-button' onClick={handleSignInClick}> sign in </Button>
-            <Button id='app-sign-up-button' onClick={handleRegisterClick}> sign up </Button>
+            <Button className='me-3' id='app-sign-in-button' onClick={handleSignInClick}> Iniciar Sesión </Button>
+            <Button id='app-sign-up-button' onClick={handleRegisterClick}> inscribirse </Button>
         </>
     )
 }
