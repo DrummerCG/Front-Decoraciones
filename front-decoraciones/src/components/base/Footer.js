@@ -45,7 +45,7 @@ const Footer = () => {
         </div>
         <div className='column'>
           <h5 className='Heading'>Ubicación</h5>
-          <p>Calle 10 sur # 25 - 04 Barrio Sinaí, Tolima</p>
+          <p>Calle 10 sur # 25 - 04 Barrio Sinaí, Neiva - Huila</p>
         </div>
       </div>
       <button className='WhatsappButton' onClick={() => sendWhatsapp("cortina kawaii")}>

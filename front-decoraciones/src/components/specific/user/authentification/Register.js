@@ -174,6 +174,9 @@ const Register = () => {
   };
 
   return (
+    <div><img className='imagenfondo'
+      src="/oip.jpeg"
+      alt="imagen de fondo" />
     <RegisterContainer>
       <Card>
         <CardHeader>
@@ -184,27 +187,27 @@ const Register = () => {
           <form onSubmit={handleSubmit}>
             <FormGroup>
               <label htmlFor="name">Nombre(s) y Apellidos*</label>
-              <FormControl type="text" id="name" placeholder="Introduce tu nombre" value={formData.name} onChange={handleChange} />
+              <FormControl type="text" id="name" placeholder="digita tu nombre completo" value={formData.name} onChange={handleChange} />
               {errors.name && <ErrorMessage>{errors.name}</ErrorMessage>}
             </FormGroup>
             <FormGroup>
               <label htmlFor="id">Documento / ID*</label>
-              <FormControl type="text" id="id" placeholder="Digita tu número de identidad" value={formData.id} onChange={handleChange} />
+              <FormControl type="text" id="id" placeholder="digita tu número de identidad" value={formData.id} onChange={handleChange} />
               {errors.id && <ErrorMessage>{errors.id}</ErrorMessage>}
             </FormGroup>
             <FormGroup>
               <label htmlFor="phone">Teléfono*</label>
-              <FormControl type="tel" id="phone" placeholder="Digita tu número telefónico" value={formData.phone} onChange={handleChange} />
+              <FormControl type="tel" id="phone" placeholder="digita tu número telefónico" value={formData.phone} onChange={handleChange} />
               {errors.phone && <ErrorMessage>{errors.phone}</ErrorMessage>}
             </FormGroup>
             <FormGroup>
               <label htmlFor="address">Dirección / Barrio*</label>
-              <FormControl type="text" id="address" placeholder="Digita tu ubicación local" value={formData.address} onChange={handleChange} />
+              <FormControl type="text" id="address" placeholder="digita tu ubicación local" value={formData.address} onChange={handleChange} />
               {errors.address && <ErrorMessage>{errors.address}</ErrorMessage>}
             </FormGroup>
             <FormGroup>
               <label htmlFor="city">Ciudad / Departamento*</label>
-              <FormControl type="text" id="city" placeholder="Digita tu ciudad y departamento" value={formData.city} onChange={handleChange} />
+              <FormControl type="text" id="city" placeholder="digita tu ciudad y departamento" value={formData.city} onChange={handleChange} />
               {errors.city && <ErrorMessage>{errors.city}</ErrorMessage>}
             </FormGroup>
             <FormGroup>
@@ -214,12 +217,12 @@ const Register = () => {
             </FormGroup>
             <FormGroup>
               <label htmlFor="password">Contraseña*</label>
-              <FormControl type="password" id="password" placeholder="Digita tu contraseña" value={formData.password} onChange={handleChange} />
+              <FormControl type="password" id="password" placeholder="digita tu contraseña" value={formData.password} onChange={handleChange} />
               {errors.password && <ErrorMessage>{errors.password}</ErrorMessage>}
             </FormGroup>
             <FormGroup>
               <label htmlFor="confirmPassword">Confirmar Contraseña*</label>
-              <FormControl type="password" id="confirmPassword" placeholder="Confirma tu contraseña" value={formData.confirmPassword} onChange={handleChange} />
+              <FormControl type="password" id="confirmPassword" placeholder="confirma tu contraseña" value={formData.confirmPassword} onChange={handleChange} />
               {errors.confirmPassword && <ErrorMessage>{errors.confirmPassword}</ErrorMessage>}
             </FormGroup>
             <CheckBoxWrapper>
@@ -229,7 +232,7 @@ const Register = () => {
             </CheckBoxWrapper>
             <ActionGroup>
               <ButtonPrimary type="submit">
-                Crear cuenta
+                Crear Cuenta
               </ButtonPrimary>
               <LinkStyled to="/sign-in">
                 ¿Ya tienes cuenta? Inicia sesión
@@ -239,6 +242,7 @@ const Register = () => {
         </CardBody>
       </Card>
     </RegisterContainer>
+    </div>
   );
 };
 

@@ -4,12 +4,12 @@
 
 .app-bg-primary{
   color:#0a0a0a; 
-  background-color:#ff980e;
+  background-color:#FF6000;
 }
 
 .app-bg-secondary{
   color:#fff; 
-  background-color:#0E76FF;
+  background-color:#0AA1DD;
 }
 
 .app-bg-complementary{
@@ -40,7 +40,7 @@
 .WhatsappButton {
   background-color: #008069; /* Color especificado */
   color: white;
-  border: none;
+  border: radius;
   padding: 0.5rem 1rem;
   border-radius: 50px; /* Botón redondeado */
   cursor: pointer;

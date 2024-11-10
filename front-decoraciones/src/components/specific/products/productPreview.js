@@ -5,14 +5,12 @@ function ProductPreview(props) {
         <Card>
             <Card.Img src={props?.product?.image}/>
             <Card.Body>
-                <Card.Title>{props?.product?.nombre}</Card.Title>
+                <Card.Title>{props?.product?.name}</Card.Title>
                 <Card.Text>
                     {props?.product?.description}
                 </Card.Text>
             </Card.Body>
         </Card>
-
-
     );
 }
 

@@ -64,6 +64,9 @@ const ButtonPrimary = styled.button`
 
 const PasswordRecover = () => {
   return (
+    <div><img className='imagenfondo'
+      src="/oip.jpeg"
+      alt="imagen de fondo" />
     <PasswordRecoverContainer>
       <Card>
         <CardHeader>
@@ -83,6 +86,7 @@ const PasswordRecover = () => {
         </CardBody>
       </Card>
     </PasswordRecoverContainer>
+    </div>
   );
 };
 

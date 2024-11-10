@@ -100,6 +100,9 @@ const Heading2 = styled.h2`
 
 const Login = () => {
   return (
+    <div><img className='imagenfondo'
+      src="/oip.jpeg"
+      alt="imagen de fondo" />
     <LoginContainer>
       <Card>
         <CardHeader>
@@ -138,6 +141,7 @@ const Login = () => {
         </CardBody>
       </Card>
     </LoginContainer>
+    </div>
   );
 };
 

@@ -3,28 +3,43 @@
         border-radius: 50%;
         width: 12px;
         height: 12px;
-        background-color: #0E76FF;
+        background-color: #0AA1DD;
         /* Azul por defecto */
     }
 
     .carousel-indicators .active {
-        background-color: #FF980E;
+        background-color: #FF6000;
         /* Naranja para el indicador activo */
     }
 
     .carousel-indicators li:nth-child(odd) {
-        background-color: #0E76FF;
+        background-color: #0AA1DD;
         /* Azul para indicadores impares */
     }
 
     .carousel-indicators li:nth-child(even) {
-        background-color: #FF980E;
+        background-color: #FF6000;
         /* Naranja para indicadores pares */
     }
+
+    .HomeCarousel .carousel-indicators {
+        margin-top: 10px; /* Separar los indicadores por 10 puntos de la imagen */
+      }
+      
+      .HomeCarousel .carousel-indicators li {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #0AA1DD; /* Azul para los indicadores */
+      }
+      
+      .HomeCarousel .carousel-indicators .active {
+        background-color: #FF6000; /* Naranja para el indicador activo */
+      }
 }
 
 .Button {
-    background-color: #FF980E;
+    background-color: #2ABE22;
     color: #ffffff;
     border: none;
     padding: 0.5rem 1rem;
@@ -33,7 +48,7 @@
     margin-top: 1rem;
 
     &:hover {
-        background-color: #e68900;
+        background-color: #FF6000;
     }
 }
 
@@ -82,3 +97,31 @@
     height: 100%; 
     object-fit: cover; 
     z-index: -1 }
+
+    .ServicesContainer {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+      }
+      
+      .imagenfondo {
+        width: 100%;
+        height: auto;
+      }
+      
+      .Empresa, .DistribuidorO, .Descrip {
+        color: #000000;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+      
+      #services-buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      
+      #services-buttons .btn {
+        margin: 5px; /* Separación entre los botones */
+      }      
+      
