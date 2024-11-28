@@ -81,16 +81,16 @@ const Catalog = () => {
   */
 
   return (
-    <div><img className='imagenfondo'
-    src="/oip.jpeg"
-    alt="imagen de fondo" />
+    <div style={{ marginTop: '100px' }}>
+      <img className='imagenfondo'
+      src="/oip.jpeg"
+      alt="imagen de fondo" />
     <div className="CatalogContainer">
       <Container>
         <div id='catalog-buttons' className="row mb-3">
           <Button variant="primary" className="m-2">Asesorias</Button>
           <Button variant="success" className="m-2">Comprar</Button>
           <Button variant="info" className="m-2">Agregar al carrito</Button>
-          <Button variant="warning" className="m-2">Iniciar Sesión</Button>
         </div>
         <div id='formulario de busqueda' className="row">
           <p>Catálogo</p>

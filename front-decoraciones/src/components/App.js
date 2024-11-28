@@ -3,6 +3,10 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 import { IntlProvider } from 'react-intl';
 import Header from './base/Header';
+import PrivacyPolicy from './sections/PrivacyPolicy';
+import TermsAndConditions from './sections/TermsAndConditions';
+import TechnicalSupport from './sections/TechnicalSupport';
+import Copyright from './sections/Copyright';
 import Footer from './base/Footer';
 import Home from './specific/Home';
 import Catalog from './specific/Catalog';
@@ -38,9 +42,13 @@ const App = () => {
               <Route path="/login" element={<Login />} />
               <Route path="/sign-in" element={<Register />} />
               <Route path="/password-recover" element={<PasswordRecover />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+              <Route path="/technical-support" element={<TechnicalSupport />} />
+              <Route path="/copyright" element={<Copyright />} />
             </Routes>
           </Container>
-          <Footer fecha="prueba de props." />
+          <Footer />
         </BrowserRouter>
       </div>
     </IntlProvider>
