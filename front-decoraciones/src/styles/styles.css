@@ -1,0 +1,20 @@
+.imagenfondo {
+    position: fixed; /* Fija la imagen de fondo en su lugar */
+    top: 0;
+    left: 0;
+    width: 100%; /* Hace que la imagen ocupe todo el ancho de la pantalla */
+    height: 100%; /* Hace que la imagen ocupe todo el alto de la pantalla */
+    object-fit: cover; /* Asegura que la imagen cubra todo el contenedor sin distorsionarse */
+    z-index: -1; /* Coloca la imagen de fondo detrás del contenido */
+  }
+
+  .inisesion {
+    position: relative;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 0rem;
+    margin-top: 8rem;
+
+  }
+  

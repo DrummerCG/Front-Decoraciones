@@ -34,7 +34,7 @@ const NavLink = styled(Link)`
   text-decoration: none;
   display: flex;
   align-items: center;
-  margin: 0 50px; /* Separación de 100 puntos */
+  margin: 0 40px; /* Separación de 100 puntos */
   span {
     margin-left: 0.3rem;
     color: #FFF;
@@ -78,22 +78,22 @@ const Header = () => {
           <Nav className="justify-content-center">
             <Nav.Item>
               <NavLink to='/'>
-                <FontAwesomeIcon icon={faHome} /><span>Inicio</span>
+                <FontAwesomeIcon icon={faHome} /><span><strong>Inicio</strong></span>
               </NavLink>
             </Nav.Item>
             <Nav.Item>
               <NavLink to='/catalogo'>
-                <FontAwesomeIcon icon={faList} /><span>Catálogo</span>
+                <FontAwesomeIcon icon={faList} /><span><strong>Catálogo</strong></span>
               </NavLink>
             </Nav.Item>
             <Nav.Item>
               <NavLink to='/servicios'>
-                <FontAwesomeIcon icon={faWrench} /><span>Servicios</span>
+                <FontAwesomeIcon icon={faWrench} /><span><strong>Servicios</strong></span>
               </NavLink>
             </Nav.Item>
             <Nav.Item>
               <NavLink to='/contactanos'>
-                <FontAwesomeIcon icon={faComments} /><span>Contáctanos</span>
+                <FontAwesomeIcon icon={faComments} /><span><strong>Contáctanos</strong></span>
               </NavLink>
             </Nav.Item>
           </Nav>

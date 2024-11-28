@@ -1,4 +1,5 @@
 .CatalogContainer {
+  place-content: center;
   position: relative;
   z-index: 1;
 }
@@ -24,3 +25,4 @@
 #catalog-buttons .btn {
   margin: 5px; /* Separación entre los botones */
 }
+

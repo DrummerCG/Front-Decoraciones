@@ -54,6 +54,7 @@ const UserOptions = () => {
         Iniciar Sesión
       </StyledButton>
       <StyledButton
+        className='me-3'
         id='app-sign-up-button'
         onClick={handleRegisterClick}
       >
