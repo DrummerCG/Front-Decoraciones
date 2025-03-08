@@ -1,7 +1,8 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
 import styled from 'styled-components';
 
-const CopyrightContainer = styled.div`
+const CopyrightContainer = styled(Container)`
   margin-top: 100px;
   padding: 2rem;
   border: 1px solid #ccc;
@@ -50,9 +51,9 @@ const Copyright = () => {
   return (
     <CopyrightContainer>
       <Heading1>AVISO DE INFRACCIÓN DE DERECHOS DE AUTOR</Heading1>
-      <Paragraph>© 2024 CONEX - (GEKCO) / Decoraciones Ortiz. Todos los derechos reservados.</Paragraph>
+      <Paragraph>© 2024 CONEX Creaciones Tecnológicas - (GEKCO) / Decoraciones Ortiz. Todos los derechos reservados.</Paragraph>
       <Paragraph>
-        Todo el contenido de este sitio web, incluyendo, sin limitación, textos, gráficos, logotipos, iconos de botones, imágenes, vídeos, clips de audio, descargas digitales y compilaciones de datos, es propiedad exclusiva de Decoraciones Ortiz o de sus proveedores productivos y está protegido por las leyes internacionales de derechos de autor y por las disposiciones de la Dirección Nacional de Derechos de Autor (DNDA) de Colombia.
+        Todo el contenido de este sitio web, incluyendo, sin limitación, textos, gráficos, logotipos, iconos de botones, imágenes, vídeos, clips de audio, descargas digitales y compilaciones de datos, son propiedad exclusiva de Decoraciones Ortiz o de sus proveedores productivos y están protegidos por las leyes internacionales de derechos de autor y por las disposiciones legales de la Dirección Nacional de Derechos de Autor (DNDA) de Colombia.
         <br />
         Contenido audiovisual: Si nuestros productos y servicios son de gusto y comodidad, es para nosotros un gran orgullo, honor y placer que nos muestre, presuma y recomiende. Por lo cual, lo animamos a subir, compartir y opinar sobre sus nuevos productos o servicios adquiridos con nosotros a redes sociales y a dejarnos una reseña en nuestro perfil de Google si te gustó nuestro sitio y nuestro desempeño. Así mismo, con la contratación de los servicios de instalación, mantenimeinto y reparación. Autorizamos el uso mediático de nuestro material audiovisual con los productos y servicios instalados de su solicitud y conformidad para con nuestro sitio web, esperamos con agrado, que comparta el contenido en sus medios y también con nosotros para subirlo a nuestras redes sociales. 
       </Paragraph>
@@ -93,7 +94,7 @@ const Copyright = () => {
         <br />
         <LinkStyled href="https://www.derechodeautor.gov.co">https://www.derechodeautor.gov.co</LinkStyled>
         <br />
-        Pedimos disculpas por cualquier tipo de abuso o inconformidad con nuestro servicio y nos comprometemos a hacer todo lo posible para encontrar y aplicar los correctivos pertinentes.
+        Pedimos disculpas por cualquier tipo de abuso o inconformidad con nuestro servicio y nos comprometemos a realizar todo lo posible para encontrar y aplicar los correctivos pertinentes cobijados por las normativas de legalidad colombiana.
       </Paragraph>
     </CopyrightContainer>
   );

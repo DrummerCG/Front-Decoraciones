@@ -8,12 +8,14 @@ const StyledDropdownButton = styled(DropdownButton)`
   .dropdown-toggle,
   .btn {
     background-color: #3C3D37; /* Fondo gris */
-    border: 3px solid #FF6000; /* Borde de 3 puntos con el color naranja */
     border-radius: 5px;
     color: white; /* Color del texto */
     cursor: pointer;
     width: 140px; /* Ancho fijo para igualar el tamaño */
     height: 45px; /* Altura fija para igualar el tamaño */
+    font-family: 'Arial', sans-serif; /* Tipografía adecuada */
+    font-size: 16px; /* Tamaño de la fuente */
+    margin-left: 20%;
 
     &:hover {
       background-color: #B7B7B7; /* Color de fondo al pasar el mouse */
@@ -27,7 +29,8 @@ const StyledDropdownButton = styled(DropdownButton)`
 
   .dropdown-menu {
     background-color: #3C3D37; /* Fondo del menú desplegable */
-    border: 5px solid #FF6000; /* Bordes de 3 puntos de grosor en color naranja */
+    font-family: 'Arial', sans-serif; /* Tipografía adecuada */
+    font-size: 16px; /* Tamaño de la fuente */
   }
 
   .dropdown-item {
@@ -50,10 +53,12 @@ function BasicButtonExample() {
       <Dropdown.Divider />
       <Dropdown.Item eventKey="3" onClick={() => navigate('/stock')}>Stock</Dropdown.Item>
       <Dropdown.Item eventKey="4" onClick={() => navigate('/orders')}>Pedidos</Dropdown.Item>
-      <Dropdown.Item eventKey="5" onClick={() => navigate('/users')}>Usuarios</Dropdown.Item>
-      <Dropdown.Item eventKey="6" onClick={() => navigate('/notifications')}>Notificaciones</Dropdown.Item>
+      <Dropdown.Item eventKey="5" onClick={() => navigate('/billing')}>Facturación</Dropdown.Item> {/* Nueva opción */}
       <Dropdown.Divider />
-      <Dropdown.Item eventKey="7" onClick={() => navigate('/logout')}>Salir</Dropdown.Item>
+      <Dropdown.Item eventKey="6" onClick={() => navigate('/users')}>Usuarios</Dropdown.Item>
+      <Dropdown.Item eventKey="7" onClick={() => navigate('/requests')}>Notificaciones</Dropdown.Item>
+      <Dropdown.Divider />
+      <Dropdown.Item eventKey="8" onClick={() => navigate('/logout')}>Salir</Dropdown.Item>
     </StyledDropdownButton>
   );
 }

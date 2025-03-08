@@ -52,6 +52,7 @@
 }
 
 .ServicesContainer {
+  width: 100%;
   position: relative;
   z-index: 1;
   text-align: center;
@@ -76,7 +77,7 @@
 .HomeCarousel {
   .carousel-indicators li {
     border-radius: 50%;
-    width: 12px;
+    width: 10px;
     height: 12px;
     background-color: #0AA1DD;
   }
@@ -95,11 +96,11 @@
 }
 
 .CarouselItemImage {
-  height: 500px;
-  width: 100%;
+  height: 400px;
+  width: 70%;
   object-fit: cover;
   margin: 1 relative;
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
 .iconsContainer {
@@ -109,6 +110,8 @@
   border: 5px solid #FF6000;
   border-radius: 10px;
   text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .iconsContainer::before {

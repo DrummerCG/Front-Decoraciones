@@ -11,6 +11,13 @@ import Footer from './base/Footer';
 import Home from './specific/Home';
 import Catalog from './specific/Catalog';
 import Services from './specific/Services';
+import Installations from './specific/products/Installations'; // Asegúrate de que la ruta sea correcta
+import Maintenance from './specific/products/Maintenance'; // Asegúrate de que la ruta sea correcta
+import Repairs from './specific/products/Repairs'; // Asegúrate de que la ruta sea correcta
+import Warranties from './specific/products/Warranties'; // Asegúrate de que la ruta sea correcta
+import Pqrs from './specific/products/Pqrs'; // Asegúrate de que la ruta sea correcta
+import Gallery from './specific/products/Gallery'; // Asegúrate de que la ruta sea correcta
+import Requests from './specific/Requests';
 import ContactUs from './specific/ContactUs';
 import Login from './specific/user/authentification/Login';
 import Register from './specific/user/authentification/Register';
@@ -36,9 +43,16 @@ const App = () => {
           <Container className="d-flex flex-column align-items-center justify-content-center" style={{ minHeight: '100vh' }}>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/Catalogo" element={<Catalog />} />
-              <Route path="/Servicios" element={<Services />} />
-              <Route path="/Contactanos" element={<ContactUs />} />
+              <Route path="/catalogo" element={<Catalog />} />
+              <Route path="/servicios" element={<Services />} />
+              <Route path="/installations" element={<Installations />} /> 
+              <Route path="/maintenance" element={<Maintenance />} /> 
+              <Route path="/repairs" element={<Repairs />} /> 
+              <Route path="/warranties" element={<Warranties />} /> 
+              <Route path="/pqrs" element={<Pqrs />} /> 
+              <Route path="/gallery" element={<Gallery />} /> 
+              <Route path="/requests" element={<Requests />} />
+              <Route path="/contactanos" element={<ContactUs />} />
               <Route path="/login" element={<Login />} />
               <Route path="/sign-in" element={<Register />} />
               <Route path="/password-recover" element={<PasswordRecover />} />

@@ -13,13 +13,12 @@ const PasswordRecoverContainer = styled.div`
 `;
 
 const Card = styled.div`
-  background: #fff
   border: 5px solid #0AA1DD;
   border-radius: 8px;
   padding: 2rem;
   width: 100%;
   max-width: 500px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   text-align: center;
 `;
 
@@ -96,7 +95,7 @@ const PasswordRecover = () => {
           <CardHeader>
             <Heading5><strong>Bienvenido(a) a la sección:</strong></Heading5>
             <Heading2>Recuperar Contraseña.</Heading2>
-            <h6>Confirma y envía tu correo electrónico para continuar...</h6>
+            <h6>Escribe tu correo electrónico para recibir un enlace de recuperación de contraseña, luego envía para continuar...</h6>
           </CardHeader>
           <CardBody>
             <form>

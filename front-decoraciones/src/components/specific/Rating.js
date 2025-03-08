@@ -9,7 +9,7 @@ const RatingContainer = styled.div`
   border: 1px solid #ccc;
   border-radius: 8px;
   background-color: #f9f9f9;
-  margin-top: 1rem;
+  margin-top: 2rem;
 `;
 
 const Stars = styled.div`
@@ -30,9 +30,12 @@ const Star = styled.span`
 const CommentBox = styled.textarea`
   width: 100%;
   padding: 0.5rem;
-  margin-top: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   border-radius: 4px;
   border: 1px solid #ccc;
+  font-size: 1rem;
+  font-weight: bold;
 `;
 
 const SubmitButton = styled.button`
@@ -74,7 +77,7 @@ const Rating = () => {
 
   return (
     <RatingContainer>
-      <h2>Califica este producto</h2>
+      <h2>Califica este producto/servicio.</h2>
       <Stars>
         {[1, 2, 3, 4, 5].map((index) => (
           <Star
@@ -90,7 +93,7 @@ const Rating = () => {
       </Stars>
       <CommentBox
         rows="4"
-        placeholder="Deja tu comentario"
+        placeholder="Dejanos saber tu comentario u opinión aquí..."
         value={comment}
         onChange={(e) => setComment(e.target.value)}
       />

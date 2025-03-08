@@ -121,6 +121,7 @@ const Login = () => {
         src="/inisesion.jpg"
         alt="inisesion"
       />
+            <Heading2>Nuestra meta... Es brindar comodidad, estilo y satisfacción desde cada hogar.</Heading2>
       <LoginContainer>
         <Card>
           <CardHeader>
