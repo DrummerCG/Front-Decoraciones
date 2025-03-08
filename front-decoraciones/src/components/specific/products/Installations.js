@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Rating from '../Rating'; 
+import axios from 'axios';
 
 const InstallationsContainer = styled.div`
   display: grid;
@@ -124,6 +125,39 @@ function lightenColor(variant) {
 }
 
 const Installations = () => {
+  const [formData, setFormData] = useState({
+    nombre_completo: '',
+    correo_electronico: '',
+    telefono: '',
+    direccion: '',
+    motivo: ''
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    // Add form validation here if needed
+
+    try {
+      const response = await axios.post('http://localhost:3001/solicitudes', {
+        tipo_solicitud: 'instalacion',
+        ...formData
+      });
+      console.log('Solicitud enviada:', response.data);
+      // Handle success (e.g., show a success message)
+    } catch (error) {
+      console.error('Error al enviar la solicitud:', error);
+      // Handle error (e.g., show an error message)
+    }
+  };
+
+
   return (
     <div>
       <img className='imagenfondo' 
@@ -136,14 +170,13 @@ const Installations = () => {
           </Paragraph>
           <Paragraph>Para solicitar el servicio de instalación, por favor completa el siguiente formulario con tus datos y una breve descripción de tu solicitud. Nos pondremos en contacto en la mayor brevedad de tiempo posible, para coordinar una visita y brindar la mejor solución a tus necesidades y expectativas.
           </Paragraph>
-          <ContactForm>
-            <Input type="text" placeholder="Nombre completo" required />
-            <Input type="email" placeholder="Correo Electrónico" required />
-            <Input type="tel" placeholder="Teléfono" required />
-            <Input type="text" placeholder="Dirección" required />
-            <TextArea rows="4" placeholder="Describe aquí indicaciones de la instalación que deseas solicitar." required>
-            </TextArea>
-            <ServicesButton variant="primary"><b>Solicitar Instalación</b></ServicesButton>
+          <ContactForm onSubmit={handleSubmit}>
+            <Input type="text" name="nombre_completo" placeholder="Nombre completo" value={formData.nombre_completo} onChange={handleChange} required />
+            <Input type="email" name="correo_electronico" placeholder="Correo Electrónico" value={formData.correo_electronico} onChange={handleChange} required />
+            <Input type="tel" name="telefono" placeholder="Teléfono" value={formData.telefono} onChange={handleChange} required />
+            <Input type="text" name="direccion" placeholder="Dirección" value={formData.direccion} onChange={handleChange} required />
+            <TextArea rows="4" name="motivo" placeholder="Describe aquí indicaciones de la instalación que deseas solicitar." value={formData.motivo} onChange={handleChange} required />
+            <ServicesButton variant="primary" type="submit"><b>Solicitar Instalación</b></ServicesButton>
           </ContactForm>
           <Paragraph>Con el objetivo de brindar un servicio excelente y profesional a todos sus usuarios, en <strong>Decoraciones Ortiz</strong>, buscamos cada día ser mejores en beneficio de nuestros clientes. Por ende, te invitamos a opinar y calificar nuestros servicios y accesorios, junto con los profesionales, quienes dedican su atención y conocimientos para adaptar y solucionar con precisión todas tus exigencias y requerimientos.
           </Paragraph>
