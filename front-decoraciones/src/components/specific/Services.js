@@ -21,13 +21,13 @@ const Heading2 = styled.h2`
   margin-bottom: 3rem;
   font-size: 1.5rem;
   font-weight: bold;
-  color: #444;
   font-family: 'Montserrat', sans-serif;
+  color: #444;
 `;
 
 const Paragraph = styled.p`
   margin-top: 3rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
   font-size: 1rem;
   color: #555;
   line-height: 1.5;
@@ -75,7 +75,8 @@ const Services = () => {
       <img className='imagenfondo' src="/oip.jpeg" alt="imagen de fondo" />
       <ServicesContainer>
         <Title>Nuestros Servicios</Title>
-        <Paragraph><b>Pensados para dar soluciones, comodidad, seguridad y conformidad a tus espacios, con la mayor facilidad y economía al alcance de todos nuestros clientes y usuarios. Por favor, selecciona del siguiente listado; una de las opciones de tu gusto o interés en la cual deseas realizar una solicitud de asistencia.</b></Paragraph>
+        <Paragraph>"Pensados para dar soluciones, comodidad, seguridad y conformidad a tus espacios, con la mayor facilidad y economía al alcance de todos nuestros clientes y usuarios. 
+          <br />Por favor, selecciona en el siguiente listado una de las opciones de tu gusto o interés en la cual deseas realizar una solicitud de asistencia."</Paragraph>
         <div className="services-list">
           <Heading2>Servicios disponibles</Heading2>
           <List>
@@ -94,11 +95,8 @@ const Services = () => {
             <ListItem>
               <LinkStyled to="/pqrs"><strong>PQRS</strong></LinkStyled>
             </ListItem>
-            <ListItem>
-              <LinkStyled to="/gallery"><strong>Galería</strong></LinkStyled>
-            </ListItem>
           </List>
-          <Paragraph>En <b>Decoraciones Ortiz</b>, ofrecemos nuestros servicios, cortinas y accesorios con la más alta calidad para asegurar el mejor resultado y satisfacción. Nuestros expertos garantizan una atención completa y enfocada en cada detalle, adaptándose a tus necesidades de funcionalidad, estilo y estética.</Paragraph>
+          <Paragraph>En <b>Decoraciones Ortiz</b>, ofrecemos nuestros productos y servicios con la más alta calidad para asegurar el mejor resultado y satisfacción. Nuestros expertos garantizan una atención completa y enfocada en cada detalle, adaptándose a tus necesidades de funcionalidad, estilo y estética.</Paragraph>
         </div>
       </ServicesContainer>
     </div>

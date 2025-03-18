@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import Rating from '../Rating'; 
-import axios from 'axios';
+import Rating from '../specific/Rating'; 
+import axios from 'axios'; 
 
-const InstallationsContainer = styled.div`
+const RepairsContainer = styled.div`
   display: grid;
   width: 70%;
   place-items: center;
@@ -13,30 +13,32 @@ const InstallationsContainer = styled.div`
   border: 1px solid #ccc;
   border-radius: 8px;
   background-color: #f9f9f9;
-  font-family: 'Roboto', 'Arial', 'Helvetica', 'sans-serif';
+  font-family: 'Open Sans', sans-serif;
   font-size: 1.5rem;
 `;
 
-const Heading1 = styled.h1`
+const Title = styled.h1`
   text-align: center;
   font-size: 2rem;
   color: #333;
   margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   font-weight: bold;
+  font-family: 'Roboto', serif;
 `;
 
 const Paragraph = styled.p`
-  margin-top: 2rem;
-  margin-bottom: 3rem;
+  margin-top: 3rem;
+  margin-bottom: 2.5rem;
   font-size: 1rem;
   color: #555;
   line-height: 1.5;
+  font-family: 'Open Sans', sans-serif;
 `;
 
 const ContactForm = styled.form`
   padding: 0.5 rem;
-  width: 60%; 
+  width: 60%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -99,7 +101,7 @@ function getBackgroundColor(variant) {
     case 'info':
       return '#17a2b8';
     case 'secondary':
-      return '#6c757d'; // Gris para secondary (comentarios)
+      return '#6c757d'; 
     default:
       return '#3C3D37';
   }
@@ -124,7 +126,7 @@ function lightenColor(variant) {
   }
 }
 
-const Installations = () => {
+const Repairs = () => {
   const [formData, setFormData] = useState({
     nombre_completo: '',
     correo_electronico: '',
@@ -146,7 +148,7 @@ const Installations = () => {
 
     try {
       const response = await axios.post('http://localhost:3001/solicitudes', {
-        tipo_solicitud: 'instalacion',
+        tipo_solicitud: 'reparacion',
         ...formData
       });
       console.log('Solicitud enviada:', response.data);
@@ -157,18 +159,19 @@ const Installations = () => {
     }
   };
 
-
   return (
     <div>
       <img className='imagenfondo' 
       src="/oip.jpeg" 
       alt="imagen de fondo" />
-      <InstallationsContainer>
-        <Heading1>Instalaciones</Heading1>
+      <RepairsContainer>
+        <Title>Reparaciones</Title>
         <div className="services-list">
-          <Paragraph><strong>En Decoraciones Ortiz, ofrecemos el mejor servicio de instalación de cortinas con accesorios de alta calidad para asegurar que cada elemento esté perfectamente colocado. Nuestros expertos garantizan una instalación completa y sin problemas, adaptándose a tus necesidades de comodidad, estilo y estética.</strong>
+          <Paragraph>En <b>Decoraciones Ortiz</b>, ofrecemos el mejor servicio de reparación de cortinas o accesorios de alta calidad para asegurar que cada elemento esté perfectamente colocado. Nuestros expertos garantizan una reparación completa y sin problemas, adaptándose a tus necesidades de comodidad, estilo y estética.
           </Paragraph>
-          <Paragraph>Para solicitar el servicio de instalación, por favor completa el siguiente formulario con tus datos y una breve descripción de tu solicitud. Nos pondremos en contacto en la mayor brevedad de tiempo posible, para coordinar una visita y brindar la mejor solución a tus necesidades y expectativas.
+          <Paragraph>¿Tus cortinas necesitan reparaciones? No te preocupes, nuestros técnicos especializados están disponibles para reparar cualquier desperfecto, asegurando que tus cortinas luzcan como nuevas y funcionen perfectamente.
+          </Paragraph>
+          <Paragraph><b>Para solicitar el servicio de "Reparación", por favor completa el siguiente formulario con tus datos y una breve descripción de tu solicitud. Nos pondremos en contacto en la mayor brevedad de tiempo posible, para coordinar una visita y brindar la mejor solución a tus necesidades y expectativas.</b>
           </Paragraph>
           <ContactForm onSubmit={handleSubmit}>
             <Input type="text" name="nombre_completo" placeholder="Nombre completo" value={formData.nombre_completo} onChange={handleChange} required />
@@ -176,15 +179,15 @@ const Installations = () => {
             <Input type="tel" name="telefono" placeholder="Teléfono" value={formData.telefono} onChange={handleChange} required />
             <Input type="text" name="direccion" placeholder="Dirección" value={formData.direccion} onChange={handleChange} required />
             <TextArea rows="4" name="motivo" placeholder="Describe aquí indicaciones de la instalación que deseas solicitar." value={formData.motivo} onChange={handleChange} required />
-            <ServicesButton variant="primary" type="submit"><b>Solicitar Instalación</b></ServicesButton>
+            <ServicesButton variant="warning" type="submit"><b>Solicitar Reparación</b></ServicesButton>
           </ContactForm>
-          <Paragraph>Con el objetivo de brindar un servicio excelente y profesional a todos sus usuarios, en <strong>Decoraciones Ortiz</strong>, buscamos cada día ser mejores en beneficio de nuestros clientes. Por ende, te invitamos a opinar y calificar nuestros servicios y accesorios, junto con los profesionales, quienes dedican su atención y conocimientos para adaptar y solucionar con precisión todas tus exigencias y requerimientos.
+          <Paragraph>Con el objetivo de brindar un servicio excelente y profesional a todos sus usuarios, en <strong>Decoraciones Ortiz</strong>, buscamos cada día ser mejores en beneficio de nuestros clientes. Por ende, te invitamos a opinar y calificar nuestros servicios y productos, junto con los profesionales, quienes dedican su atención y conocimientos para adaptar y solucionar con precisión todas tus exigencias y requerimientos.
           </Paragraph>
           <Rating />
         </div>
-      </InstallationsContainer>
+      </RepairsContainer>
     </div>
   );
 }
 
-export default Installations;
+export default Repairs;

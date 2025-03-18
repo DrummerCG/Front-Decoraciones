@@ -7,9 +7,15 @@ const LoginContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: auto; /* Cambiado de 100vh a auto */
-  margin-bottom: 2rem; /* Aumentado para margen inferior */
-  margin-top: 7rem; /* Ajustado para margen superior */
+  height: auto;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  padding: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
 `;
 
 const Card = styled.div`
@@ -17,8 +23,8 @@ const Card = styled.div`
   border-radius: 8px;
   padding: 2rem;
   width: 100%;
-  max-width: 500px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  max-width: 600px; // Ajusta el tamaño máximo del contenedor
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
 `;
 
@@ -100,9 +106,10 @@ const Heading2 = styled.h2`
 `;
 
 const ImageStyled = styled.img`
-  max-width: 70%; /* Reducir el tamaño a 70% */
+  width: 80%; 
   height: auto;
   display: block;
+  margin-top: 7px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 3px;
@@ -111,23 +118,24 @@ const ImageStyled = styled.img`
 const Login = () => {
   return (
     <div style={{ marginTop: '100px' }}>
-      <img
-        className='imagenfondo'
-        src="/oip.jpeg"
-        alt="imagen de fondo"
-      />
-      <ImageStyled
-        className='inisesion'
-        src="/inisesion.jpg"
-        alt="inisesion"
-      />
-            <Heading2>Nuestra meta... Es brindar comodidad, estilo y satisfacción desde cada hogar.</Heading2>
+      <img className='imagenfondo'
+       src="/oip.jpeg"
+       alt="imagen de fondo" />
       <LoginContainer>
         <Card>
-          <CardHeader>
-            <Heading5><strong>Hola, Bienvenido(a)</strong></Heading5>
+          <ImageStyled
+            className='inisesion'
+            src="/inisesion.jpg"
+            alt="inisesion"
+          />
+          <br />
+          <Heading5><strong>Hola, Bienvenido(a)</strong></Heading5>
             <Heading2>Inicia Sesión...</Heading2>
-            <h6>Ingresa tu correo electrónico y contraseña. </h6>
+          <br />
+          <h6>"En Decoraciones Ortiz... Nuestra meta es brindar comodidad, estilo y satisfacción para cada hogar.</h6>
+          <br />
+          <CardHeader>
+            <h6><b>Ingresa tu correo electrónico y contraseña.</b></h6>
           </CardHeader>
           <CardBody>
             <form>

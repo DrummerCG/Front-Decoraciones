@@ -12,30 +12,36 @@ const ContactContainer = styled.div`
   border: 1px solid #ccc;
   border-radius: 8px;
   background-color: #f9f9f9;
-  font-family: 'Roboto', 'Arial', 'Helvetica', 'sans-serif';
+  font-family: 'Open Sans', sans-serif;
   font-size: 1.5rem;
 `;
 
-const Heading1 = styled.h1`
+const Title = styled.h1`
   text-align: center;
   font-size: 2rem;
   color: #333;
-  margin-bottom: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  font-weight: bold;
+  font-family: 'Roboto', serif;
 `;
 
 const Heading2 = styled.h2`
   margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   font-size: 1.5rem;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
   color: #444;
 `;
 
 const Paragraph = styled.p`
-  margin-top: 1rem;
-  margin-bottom: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2.5rem;
   font-size: 1rem;
   color: #555;
   line-height: 1.5;
+  font-family: 'Open Sans', sans-serif;
 `;
 
 const ContactUsForm = styled.form`
@@ -70,7 +76,7 @@ const Button = styled.button`
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  margin-top: 2rem;
+  margin-top: 3rem;
   margin-bottom: 3rem;
   margin-left: 40%;
 
@@ -89,8 +95,20 @@ const ContactUs = () => {
     <img className='imagenfondo'
     src="/oip.jpeg"
     alt="imagen de fondo" />
-    <Heading1>¿Quiénes somos?</Heading1>
+    <Title>¿Quiénes somos?</Title>
       <Paragraph>En <strong>Decoraciones Ortiz</strong>, nos dedicamos a embellecer y adecuar tus espacios con productos de la más alta calidad, adaptándolos a tus gustos y necesidades para mayor comodidad. Contamos con <b>20 años</b> de experiencia en el mercado, hemos consolidado nuestro esfuerzo y empeño en el sector de la decoración, ofreciendo soluciones innovadoras y personalizadas para hogares, oficinas, comercios y exteriores. Estamos aquí para ayudarte brindando ideas y satisfacción. Ponte en contacto con nosotros a través de cualquiera de nuestros siguientes medios:
+      </Paragraph>
+      <Paragraph>
+      <Heading2>Nuestra Misión</Heading2>
+      Nuestra misión es transformar tus espacios en ambientes acogedores, estéticamente atractivos y altamente funcionales, asegurando siempre la máxima satisfacción de nuestros clientes y usuarios, brindando una experiencia profesional completa, segura y garantizada.
+      </Paragraph>
+      <Paragraph>
+      <Heading2>Visión y Valores</Heading2>
+      Nos guiamos por valores fundamentales como la excelencia, la innovación, la estética y el compromiso con la calidad. Creemos en la importancia de un servicio al cliente excepcional, seguro y confiable, trabajando incansablemente en la meta de superar cualquier expectativa en cada producto o servicio que brindamos.
+      </Paragraph>
+      <Paragraph>
+      <Heading2>Responsabilidad Social</Heading2>
+      En <b>Decoraciones Ortiz</b>, entendemos que el éxito empresarial va de la mano con la responsabilidad social. Por eso, estamos comprometidos con prácticas sostenibles, reduciendo nuestro impacto ambiental a través del uso de materiales más ecológicos y amigables, con técnicas de producción éticas y responsables. Además, apoyamos activamente a comunidades locales, participando en iniciativas que promueven el bienestar profesional y un desarrollo social, que pueda aportar al crecimiento comercial y mejorar las oportunidades laborales de la comunidad en general. 
       </Paragraph>
       <Heading2>Contáctanos</Heading2>
       <Paragraph>
@@ -104,12 +122,10 @@ const ContactUs = () => {
         Calle 10 sur # 25 - 04 Barrio Sinaí, Neiva - Huila, Colombia
         <br />
         <br />
-        <b>Correos Electrónicos:
+        <b>Correo Electrónico:
         <br /> 
         </b><a href="mailto:contacto.decoracionesortiz@gmail.com" style={{ textDecoration: 'none', color: 'inherit' }} onMouseOver={(e) => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={(e) => e.currentTarget.style.textDecoration = 'none'}> contacto.decoracionesortiz@gmail.com</a> 
         <br /> 
-        <a href="mailto:soporte.decoracionesortiz@gmail.com" style={{ textDecoration: 'none', color: 'inherit' }} onMouseOver={(e) => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={(e) => e.currentTarget.style.textDecoration = 'none'}> soporte.decoracionesortiz@gmail.com</a>
-        <br />
       </Paragraph>
       <Paragraph>
         <b>Horarios de Atención:</b>
@@ -124,22 +140,10 @@ const ContactUs = () => {
         <br />
         <a href="https://www.facebook.com/share/19hkcs69RJ/">Facebook</a> | <a href="https://twitter.com">X</a> | <a href="https://www.instagram.com/pablo.emilioortiz" target="_blank" rel="noopener noreferrer">Instagram</a>
       </Paragraph>
-      <Paragraph>
-      <Heading2>Nuestra Misión</Heading2>
-      Nuestra misión es transformar tus espacios en ambientes acogedores, estéticamente atractivos y altamente funcionales, asegurando siempre la máxima satisfacción de nuestros clientes y usuarios, brindando una experiencia profesional completa, segura y garantizada.
-      </Paragraph>
-      <Paragraph>
-      <Heading2>Visión y Valores</Heading2>
-      Nos guiamos por valores fundamentales como la excelencia, la innovación, la estética y el compromiso con la calidad. Creemos en la importancia de un servicio al cliente excepcional, seguro y confiable, trabajando incansablemente en la meta de superar cualquier expectativa en cada producto o servicio que brindamos.
-      </Paragraph>
-      <Paragraph>
-      <Heading2>Responsabilidad Social</Heading2>
-      En <b>Decoraciones Ortiz</b>, entendemos que el éxito empresarial va de la mano con la responsabilidad social. Por eso, estamos comprometidos con prácticas sostenibles, reduciendo nuestro impacto ambiental a través del uso de materiales más ecológicos y amigables, con técnicas de producción éticas y responsables. Además, apoyamos activamente a comunidades locales, participando en iniciativas que promueven el bienestar profesional y un desarrollo social, que pueda aportar al crecimiento comercial y mejorar las oportunidades laborales de la comunidad en general. 
-      </Paragraph>
       <Paragraph>¿Necesitas más información sobre algún tipo de cortina, accesorio o servicio en particular? <b>¡ Estamos aquí !</b>, No dudes en contactarnos y preguntarnos. Podemos ayudarte a elegir tu cortina o accesorio ideal para tu hogar o espacio especial.
       </Paragraph>
       <br />
-      <Paragraph><b>Cortina tras cortina, tenemos ocultas muchas cosas más para ti...  ¡ Descúbrelas !</b>
+      <Paragraph><b>Cortina tras cortina, tenemos ocultas muchas cosas más para tí...  ¡ Descúbrelas !</b>
       </Paragraph>
       <button className="asesoriasButton">Asesorías</button> {/* Utiliza la clase asesoriasButton*/}
       <Map>

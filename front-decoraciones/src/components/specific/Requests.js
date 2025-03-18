@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import axios from 'axios';
 
 const RequestsContainer = styled.div`
   margin-top: 50px;
@@ -35,31 +37,39 @@ const LinkStyled = styled(Link)`
 `;
 
 const Requests = () => {
+  const [requests, setRequests] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://localhost:3001/solicitudes')
+      .then(response => {
+        setRequests(response.data);
+      })
+      .catch(error => {
+        console.error('Error al obtener las solicitudes:', error);
+      });
+  }, []);
+
   return (
     <RequestsContainer>
       <Title>Solicitudes de Servicios</Title>
       <List>
-        <ListItem>
-          <LinkStyled to="/installations">Instalaciones</LinkStyled>
-        </ListItem>
-        <ListItem>
-          <LinkStyled to="/maintenance">Mantenimiento</LinkStyled>
-        </ListItem>
-        <ListItem>
-          <LinkStyled to="/repairs">Reparaciones</LinkStyled>
-        </ListItem>
-        <ListItem>
-          <LinkStyled to="/warranties">Garantías</LinkStyled>
-        </ListItem>
-        <ListItem>
-          <LinkStyled to="/pqrs">PQRS</LinkStyled>
-        </ListItem>
-        <ListItem>
-          <LinkStyled to="/comments">Comentarios</LinkStyled>
-        </ListItem>
+        {requests.map((request, index) => (
+          <ListItem key={index}>
+            <LinkStyled to={`/solicitudes/${request.Id}`}>{request.Titulo}</LinkStyled>
+          </ListItem>
+        ))}
       </List>
     </RequestsContainer>
   );
+};
+
+Requests.propTypes = {
+  requests: PropTypes.arrayOf(
+    PropTypes.shape({
+      Id: PropTypes.number.isRequired,
+      Titulo: PropTypes.string.isRequired,
+    })
+  ),
 };
 
 export default Requests;

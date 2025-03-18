@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import Rating from '../Rating'; 
+import Rating from '../specific/Rating'; 
 
 const PqrsContainer = styled.div`
   display: grid;

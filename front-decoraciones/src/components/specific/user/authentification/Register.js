@@ -10,7 +10,13 @@ const RegisterContainer = styled.div`
   justify-content: center;
   height: auto;
   margin-bottom: 2rem;
-  margin-top: 7rem;
+  margin-top: 2rem;
+  padding: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
 `;
 
 const Card = styled.div`
@@ -18,7 +24,7 @@ const Card = styled.div`
   border-radius: 8px;
   padding: 2rem;
   width: 100%;
-  max-width: auto;
+  max-width: 600px; // Ajusta el tamaño máximo del contenedor
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
 `;
@@ -27,6 +33,7 @@ const CardHeader = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   border-bottom: 5px solid #0AA1DD;
   padding-bottom: 1rem;
 `;
@@ -136,11 +143,13 @@ const Register = () => {
     id: '',
     phone: '',
     address: '',
+    neighborhood: '',
     city: '',
+    state: '',
     email: '',
     password: '',
     confirmPassword: '',
-    terms: false,
+    terms: false
   });
 
   const [errors, setErrors] = useState({});
@@ -149,7 +158,9 @@ const Register = () => {
     id: false,
     phone: false,
     address: false,
+    neighborhood: false,
     city: false,
+    state: false,
     email: false,
     password: false,
     confirmPassword: false,
@@ -159,7 +170,9 @@ const Register = () => {
     id: false,
     phone: false,
     address: false,
+    neighborhood: false,
     city: false,
+    state: false,
     email: false,
     password: false,
     confirmPassword: false,
@@ -207,7 +220,11 @@ const Register = () => {
         return /^\d{10}$/.test(value);
       case 'address':
         return value.trim() !== '';
+      case 'neighborhood':
+        return value.trim() !== '';
       case 'city':
+        return value.trim() !== '';
+      case 'state':
         return value.trim() !== '';
       case 'email':
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
@@ -230,7 +247,9 @@ const Register = () => {
       newErrors.phone = 'El teléfono debe tener 10 dígitos';
     }
     if (!formData.address) newErrors.address = 'La dirección es obligatoria';
+    if (!formData.neighborhood) newErrors.neighborhood = 'El barrio es obligatorio';
     if (!formData.city) newErrors.city = 'La ciudad es obligatoria';
+    if (!formData.state) newErrors.state = 'El departamento es obligatorio';
     if (!formData.email) {
       newErrors.email = 'El correo electrónico es obligatorio';
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
@@ -246,7 +265,7 @@ const Register = () => {
     } else if (formData.password !== formData.confirmPassword) {
       newErrors.confirmPassword = 'Las contraseñas no coinciden';
     }
-    if (!formData.terms) newErrors.terms = ' Debe aceptar los términos y condiciones';
+    if (!formData.terms) newErrors.terms = 'Debe aceptar los términos y condiciones';
     return newErrors;
   };
 
@@ -263,58 +282,191 @@ const Register = () => {
 
   return (
     <div style={{ marginTop: '100px' }}>
-  <img className='imagenfondo'
+      <img className='imagenfondo'
        src="/oip.jpeg"
        alt="imagen de fondo" />
-  <RegisterContainer>
-    <Card>
+     <RegisterContainer>
+      <Card>
+      <Heading5><strong>Hola, Bienvenido(a)</strong></Heading5>
+      <Heading2>Regístrate...</Heading2>
+      <br />
+      <h6>"Regístrate fácil y sencillo, completa nuestro formulario y acepta los Términos. Luego accede y navega disfrutando de todos nuestros productos y servicios."</h6>
+      <br />
       <CardHeader>
-        <Heading5><strong>Hola, Bienvenido(a)</strong></Heading5>
-        <Heading2>Regístrate...</Heading2>
-        <h6>Completa cada campo con tus datos personales. (*) Obligatorio</h6>
+        <h6><b>Completa cada campo con tus datos personales. (*) Obligatorio</b></h6>
       </CardHeader>
       <CardBody>
         <form onSubmit={handleSubmit}>
-          <FormGroup>
-            <label htmlFor="name">Nombre(s) y Apellidos*</label>
-            <FormControl type="text" id="name" placeholder="digita tu nombre completo" value={formData.name} onChange={handleChange} />
-            {errors.name && <ErrorMessage>{errors.name}</ErrorMessage>}
-          </FormGroup>
-          <FormGroup>
-            <label htmlFor="id">Documento / ID*</label>
-            <FormControl type="text" id="id" placeholder="digita tu número de identidad" value={formData.id} onChange={handleChange} />
-            {errors.id && <ErrorMessage>{errors.id}</ErrorMessage>}
-          </FormGroup>
-          <FormGroup>
-            <label htmlFor="phone">Teléfono*</label>
-            <FormControl type="tel" id="phone" placeholder="digita tu número telefónico" value={formData.phone} onChange={handleChange} />
-            {errors.phone && <ErrorMessage>{errors.phone}</ErrorMessage>}
-          </FormGroup>
-          <FormGroup>
-            <label htmlFor="address">Dirección / Barrio*</label>
-            <FormControl type="text" id="address" placeholder="digita tu ubicación local" value={formData.address} onChange={handleChange} />
-            {errors.address && <ErrorMessage>{errors.address}</ErrorMessage>}
-          </FormGroup>
-          <FormGroup>
-            <label htmlFor="city">Ciudad / Departamento*</label>
-            <FormControl type="text" id="city" placeholder="digita tu ciudad y departamento" value={formData.city} onChange={handleChange} />
-            {errors.city && <ErrorMessage>{errors.city}</ErrorMessage>}
-          </FormGroup>
-          <FormGroup>
-            <label htmlFor="email">Email*</label>
-            <FormControl type="email" id="email" placeholder="digitaaquí@tucorreo.com" value={formData.email} onChange={handleChange} />
-            {errors.email && <ErrorMessage>{errors.email}</ErrorMessage>}
-          </FormGroup>
-          <FormGroup>
-            <label htmlFor="password">Contraseña*</label>
-            <FormControl type="password" id="password" placeholder="digita tu contraseña" value={formData.password} onChange={handleChange} />
-            {errors.password && <ErrorMessage>{errors.password}</ErrorMessage>}
-          </FormGroup>
-          <FormGroup>
-            <label htmlFor="confirmPassword">Confirmar Contraseña*</label>
-            <FormControl type="password" id="confirmPassword" placeholder="confirma tu contraseña" value={formData.confirmPassword} onChange={handleChange} />
-            {errors.confirmPassword && <ErrorMessage>{errors.confirmPassword}</ErrorMessage>}
-          </FormGroup>
+              <FormGroup>
+                <label htmlFor="name">Nombre(s) y Apellidos*</label>
+                <FormControl
+                  type="text"
+                  id="name"
+                  placeholder="digita tu nombre completo"
+                  value={formData.name}
+                  onChange={handleChange}
+                  onFocus={handleFocus}
+                  onBlur={handleBlur}
+                  isValid={validFields.name}
+                  hasError={errors.name}
+                  isFocused={focusedFields.name}
+                />
+                {validFields.name && <ConfirmationIcon isValid={validFields.name} />}
+                {errors.name && <ErrorMessage>{errors.name}</ErrorMessage>}
+              </FormGroup>
+              <FormGroup>
+                <label htmlFor="id">Documento / ID*</label>
+                <FormControl
+                  type="text"
+                  id="id"
+                  placeholder="digita tu número de identidad"
+                  value={formData.id}
+                  onChange={handleChange}
+                  onFocus={handleFocus}
+                  onBlur={handleBlur}
+                  isValid={validFields.id}
+                  hasError={errors.id}
+                  isFocused={focusedFields.id}
+                />
+                {validFields.id && <ConfirmationIcon isValid={validFields.id} />}
+                {errors.id && <ErrorMessage>{errors.id}</ErrorMessage>}
+              </FormGroup>
+              <FormGroup>
+                <label htmlFor="phone">Teléfono*</label>
+                <FormControl
+                  type="tel"
+                  id="phone"
+                  placeholder="digita tu número telefónico"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  onFocus={handleFocus}
+                  onBlur={handleBlur}
+                  isValid={validFields.phone}
+                  hasError={errors.phone}
+                  isFocused={focusedFields.phone}
+                />
+                {validFields.phone && <ConfirmationIcon isValid={validFields.phone} />}
+                {errors.phone && <ErrorMessage>{errors.phone}</ErrorMessage>}
+              </FormGroup>
+              <FormGroup>
+                <label htmlFor="address">Dirección*</label>
+                <FormControl
+                  type="text"
+                  id="address"
+                  placeholder="digita tu nomenclatura (numeración urbana)"
+                  value={formData.address}
+                  onChange={handleChange}
+                  onFocus={handleFocus}
+                  onBlur={handleBlur}
+                  isValid={validFields.address}
+                  hasError={errors.address}
+                  isFocused={focusedFields.address}
+                />
+                {validFields.address && <ConfirmationIcon isValid={validFields.address} />}
+                {errors.address && <ErrorMessage>{errors.address}</ErrorMessage>}
+              </FormGroup>
+              <FormGroup>
+                <label htmlFor="neighborhood">Barrio*</label>
+                <FormControl
+                  type="text"
+                  id="neighborhood"
+                  placeholder="digita el nombre de tu localidad"
+                  value={formData.neighborhood}
+                  onChange={handleChange}
+                  onFocus={handleFocus}
+                  onBlur={handleBlur}
+                  isValid={validFields.neighborhood}
+                  hasError={errors.neighborhood}
+                  isFocused={focusedFields.neighborhood}
+                />
+                {validFields.neighborhood && <ConfirmationIcon isValid={validFields.neighborhood} />}
+                {errors.neighborhood && <ErrorMessage>{errors.neighborhood}</ErrorMessage>}
+              </FormGroup>
+              <FormGroup>
+                <label htmlFor="city">Ciudad*</label>
+                <FormControl
+                  type="text"
+                  id="city"
+                  placeholder="digita tu ciudad de residencia"
+                  value={formData.city}
+                  onChange={handleChange}
+                  onFocus={handleFocus}
+                  onBlur={handleBlur}
+                  isValid={validFields.city}
+                  hasError={errors.city}
+                  isFocused={focusedFields.city}
+                />
+                {validFields.city && <ConfirmationIcon isValid={validFields.city} />}
+                {errors.city && <ErrorMessage>{errors.city}</ErrorMessage>}
+              </FormGroup>
+              <FormGroup>
+                <label htmlFor="state">Departamento*</label>
+                <FormControl
+                  type="text"
+                  id="state"
+                  placeholder="digita tu departamento de ubicación"
+                  value={formData.state}
+                  onChange={handleChange}
+                  onFocus={handleFocus}
+                  onBlur={handleBlur}
+                  isValid={validFields.state}
+                  hasError={errors.state}
+                  isFocused={focusedFields.state}
+                />
+                {validFields.state && <ConfirmationIcon isValid={validFields.state} />}
+                {errors.state && <ErrorMessage>{errors.state}</ErrorMessage>}
+              </FormGroup>
+              <FormGroup>
+                <label htmlFor="email">Email*</label>
+                <FormControl
+                  type="email"
+                  id="email"
+                  placeholder="digitaaquí@tucorreo.com"
+                  value={formData.email}
+                  onChange={handleChange}
+                  onFocus={handleFocus}
+                  onBlur={handleBlur}
+                  isValid={validFields.email}
+                  hasError={errors.email}
+                  isFocused={focusedFields.email}
+                />
+                {validFields.email && <ConfirmationIcon isValid={validFields.email} />}
+                {errors.email && <ErrorMessage>{errors.email}</ErrorMessage>}
+              </FormGroup>
+              <FormGroup>
+                <label htmlFor="password">Contraseña*</label>
+                <FormControl
+                  type="password"
+                  id="password"
+                  placeholder="digita tu contraseña"
+                  value={formData.password}
+                  onChange={handleChange}
+                  onFocus={handleFocus}
+                  onBlur={handleBlur}
+                  isValid={validFields.password}
+                  hasError={errors.password}
+                  isFocused={focusedFields.password}
+                />
+                {validFields.password && <ConfirmationIcon isValid={validFields.password} />}
+                {errors.password && <ErrorMessage>{errors.password}</ErrorMessage>}
+              </FormGroup>
+              <FormGroup>
+                <label htmlFor="confirmPassword">Confirmar Contraseña*</label>
+                <FormControl
+                  type="password"
+                  id="confirmPassword"
+                  placeholder="confirma tu contraseña"
+                  value={formData.confirmPassword}
+                  onChange={handleChange}
+                  onFocus={handleFocus}
+                  onBlur={handleBlur}
+                  isValid={validFields.confirmPassword}
+                  hasError={errors.confirmPassword}
+                  isFocused={focusedFields.confirmPassword}
+                />
+                {validFields.confirmPassword && <ConfirmationIcon isValid={validFields.confirmPassword} />}
+                {errors.confirmPassword && <ErrorMessage>{errors.confirmPassword}</ErrorMessage>}
+              </FormGroup>
           <CheckBoxWrapper>
             <input type="checkbox" id="terms" checked={formData.terms} onChange={handleChange} />
             <label htmlFor="terms"></label>Acepto los<LinkStyled to="/terms-and-conditions">

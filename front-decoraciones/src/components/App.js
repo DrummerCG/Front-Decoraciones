@@ -11,17 +11,21 @@ import Footer from './base/Footer';
 import Home from './specific/Home';
 import Catalog from './specific/Catalog';
 import Services from './specific/Services';
-import Installations from './specific/products/Installations'; // Asegúrate de que la ruta sea correcta
-import Maintenance from './specific/products/Maintenance'; // Asegúrate de que la ruta sea correcta
-import Repairs from './specific/products/Repairs'; // Asegúrate de que la ruta sea correcta
-import Warranties from './specific/products/Warranties'; // Asegúrate de que la ruta sea correcta
-import Pqrs from './specific/products/Pqrs'; // Asegúrate de que la ruta sea correcta
-import Gallery from './specific/products/Gallery'; // Asegúrate de que la ruta sea correcta
+import Installations from './services/Installations'; 
+import Maintenance from './services/Maintenance'; 
+import Repairs from './services/Repairs'; 
+import Warranties from './services/Warranties'; 
+import Pqrs from './services/Pqrs'; 
+import Gallery from './specific/products/Gallery'; 
 import Requests from './specific/Requests';
 import ContactUs from './specific/ContactUs';
 import Login from './specific/user/authentification/Login';
 import Register from './specific/user/authentification/Register';
 import PasswordRecover from './specific/user/authentification/PasswordRecover';
+import CrearFactura from './billing/crearFactura'; // Ruta actualizada
+import BuscarFactura from './billing/buscarFactura'; // Ruta actualizada
+import EditarFactura from './billing/editarFactura'; // Ruta actualizada
+import EliminarFactura from './billing/eliminarFactura'; // Ruta actualizada
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/App.css';
 
@@ -60,6 +64,10 @@ const App = () => {
               <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
               <Route path="/technical-support" element={<TechnicalSupport />} />
               <Route path="/copyright" element={<Copyright />} />
+              <Route path="/facturacion/nueva" element={<CrearFactura />} />
+              <Route path="/facturacion/buscar" element={<BuscarFactura />} />
+              <Route path="/facturacion/editar" element={<EditarFactura />} />
+              <Route path="/facturacion/eliminar" element={<EliminarFactura />} />
             </Routes>
           </Container>
           <Footer />
