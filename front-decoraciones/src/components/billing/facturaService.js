@@ -5,10 +5,16 @@ const API_URL = 'http://localhost:3001';
 export const crearFactura = async (factura) => {
     try {
         const response = await axios.post(`${API_URL}/facturas`, factura);
+        if (response.status !== 201) {
+            console.error('Error al crear la factura:', response);
+            window.alert('Error al crear la factura');
+            return response;
+        }
         return response.data;
     } catch (error) {
         console.error('Error al crear la factura:', error);
-        throw error;
+        window.alert('Error al crear la factura');
+        return error;
     }
 };
 

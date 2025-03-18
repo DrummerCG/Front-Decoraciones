@@ -76,10 +76,20 @@ const CrearFactura = () => {
             fecha_recibido: fechaRecibido
         };
         const response = await crearFactura(factura);
-        console.log('Factura creada:', response);
-        // Incrementar el número de factura para la siguiente factura
-        const nuevoNumero = (parseInt(facturaNumero, 10) + 1).toString().padStart(6, '0');
-        setFacturaNumero(nuevoNumero);
+        if (!response) {
+            console.error('Error al crear la factura:', response);
+            return;
+        }
+        else if (response.error) {
+            console.error('Error al crear la factura: con response.error', response.error);
+            return;
+        }
+        else {
+            console.log('Factura creada:', response);
+            // Incrementar el número de factura para la siguiente factura
+            const nuevoNumero = (parseInt(facturaNumero, 10) + 1).toString().padStart(6, '0');
+            setFacturaNumero(nuevoNumero);
+        }
     };
 
     const handleProductoChange = (index, field, value) => {
@@ -156,7 +166,7 @@ const CrearFactura = () => {
                         <label>Ciudad:</label>
                         <input type="text" value={ciudad} onChange={(e) => setCiudad(e.target.value)} />
                     </FormGroup>
-                    
+
                 </FormRow>
                 {productos.map((producto, index) => (
                     <div key={index}>
@@ -187,7 +197,7 @@ const CrearFactura = () => {
                                 <input type="checkbox" checked={pagoContado} onChange={(e) => setPagoContado(e.target.checked)} />
                                 <label>Transferencia</label>
                                 <input type="checkbox" checked={transferencia} onChange={(e) => setTransferencia(e.target.checked)} />
-                            </FormGroup>                        
+                            </FormGroup>
                             <FormGroup>
                                 <p>Tipo de Producto:</p>
                                 <label>Artículo(s)</label>
