@@ -150,7 +150,9 @@ function BasicButtonExample() {
           <Dropdown.Item eventKey="27" onClick={() => navigate('/sign-in')}>Garantías</Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
-      <Dropdown.Divider />
+      <Dropdown.Divider/>
+      <Dropdown.Item eventKey="28" onClick={() => navigate('/clients')}>Clientes</Dropdown.Item>
+      <Dropdown.Divider/>
       <Dropdown.Item eventKey="28" onClick={() => navigate('/logout')}>Salir</Dropdown.Item>
     </StyledDropdownButton>
   );

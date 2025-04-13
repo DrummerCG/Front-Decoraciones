@@ -29,6 +29,7 @@ import CrearFactura from './billing/crearFactura';
 import BuscarFactura from './billing/buscarFactura'; 
 import EditarFactura from './billing/editarFactura'; 
 import EliminarFactura from './billing/eliminarFactura'; 
+import Clients from './specific/clients/Clients';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/App.css';
 
@@ -77,6 +78,7 @@ const App = () => {
               <Route path="/users/nuevo" element={<NuevoUsuario />} />
               <Route path="/users/editar/:id" element={<EditarUsuario userRole={userRole} />} />
               <Route path="/users/lista" element={<ListaUsuarios />} />
+              <Route path="/clients" element={<Clients />} />
             </Routes>
           </Container>
           <Footer />
