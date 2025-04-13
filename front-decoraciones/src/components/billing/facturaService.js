@@ -20,13 +20,13 @@ export const crearFactura = async (factura) => {
 
 export const obtenerUltimaFactura = async () => {
     try {
-        const response = await axios.get(`${API_URL}/facturas/ultima`);
-        return response.data;
+      const response = await axios.get('http://localhost:3001/api/facturas/ultima'); // Verifica esta URL
+      return response.data;
     } catch (error) {
-        console.error('Error al obtener la última factura:', error);
-        throw error;
+      console.error('Error al obtener la última factura:', error);
+      return null;
     }
-};
+  };
 
 export const obtenerFactura = async (id) => {
     try {

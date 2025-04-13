@@ -133,11 +133,11 @@ function BasicButtonExample() {
       <Dropdown className="dropdown-submenu">
         <Dropdown.Toggle as="a" className="dropdown-item" href="#">Usuarios</Dropdown.Toggle>
         <Dropdown.Menu>
-          <Dropdown.Item eventKey="19" onClick={() => navigate('/users')}>Nuevo</Dropdown.Item>
-          <Dropdown.Item eventKey="20" onClick={() => navigate('/sign-in')}>Editar</Dropdown.Item>
-          <Dropdown.Item eventKey="21" onClick={() => navigate('/login')}>Permisos</Dropdown.Item>
-          <Dropdown.Item eventKey="22" onClick={() => navigate('/sign-in')}>Bloqueos</Dropdown.Item>
-          <Dropdown.Item eventKey="23" onClick={() => navigate('/login')}>Listados</Dropdown.Item>
+          <Dropdown.Item eventKey="19" onClick={() => navigate('/users/nuevo')}>Nuevo</Dropdown.Item>
+          <Dropdown.Item eventKey="20" onClick={() => navigate('/users/editar/123')}>Editar</Dropdown.Item>          
+          <Dropdown.Item eventKey="21" onClick={() => navigate('/users/buscar')}>Buscar</Dropdown.Item>
+          <Dropdown.Item eventKey="22" onClick={() => navigate('/users/bloqueos')}>Bloqueos</Dropdown.Item>
+          <Dropdown.Item eventKey="23" onClick={() => navigate('/users/lista')}>Listados</Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
       <Dropdown.Divider />

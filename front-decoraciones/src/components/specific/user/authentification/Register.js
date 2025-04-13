@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { FaCheckCircle } from 'react-icons/fa'; // Importa el icono de confirmación
 import { Link } from 'react-router-dom';
 import '../../../../styles/styles.css'; // Importa el archivo CSS con la imagen de fondo
+import axios from 'axios';
 
 const RegisterContainer = styled.div`
   display: flex;
@@ -141,11 +142,13 @@ const Register = () => {
   const [formData, setFormData] = useState({
     name: '',
     id: '',
+    idType: 'CC',
     phone: '',
     address: '',
     neighborhood: '',
     city: '',
     state: '',
+    country: '',
     email: '',
     password: '',
     confirmPassword: '',
@@ -156,11 +159,13 @@ const Register = () => {
   const [validFields, setValidFields] = useState({
     name: false,
     id: false,
+    idType: false,
     phone: false,
     address: false,
     neighborhood: false,
     city: false,
     state: false,
+    country: false,
     email: false,
     password: false,
     confirmPassword: false,
@@ -168,11 +173,13 @@ const Register = () => {
   const [focusedFields, setFocusedFields] = useState({
     name: false,
     id: false,
+    idType: false,
     phone: false,
     address: false,
     neighborhood: false,
     city: false,
     state: false,
+    country: false,
     email: false,
     password: false,
     confirmPassword: false,
@@ -216,6 +223,8 @@ const Register = () => {
         return value.trim() !== '';
       case 'id':
         return value.trim() !== '';
+        case 'id_type':
+        return value.trim() !== '';
       case 'phone':
         return /^\d{10}$/.test(value);
       case 'address':
@@ -225,6 +234,8 @@ const Register = () => {
       case 'city':
         return value.trim() !== '';
       case 'state':
+        return value.trim() !== '';
+      case 'country':
         return value.trim() !== '';
       case 'email':
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
@@ -241,6 +252,7 @@ const Register = () => {
     const newErrors = {};
     if (!formData.name) newErrors.name = 'El nombre es obligatorio';
     if (!formData.id) newErrors.id = 'El documento / ID es obligatorio';
+    if (!formData.id_type) newErrors.id_type = 'El tipo de identificación es obligatorio';
     if (!formData.phone) {
       newErrors.phone = 'El teléfono es obligatorio';
     } else if (!/^\d{10}$/.test(formData.phone)) {
@@ -269,14 +281,22 @@ const Register = () => {
     return newErrors;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const validationErrors = validateForm();
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
     } else {
-      console.log(formData);
-      // Aquí se puede hacer la petición con axios
+      try {
+        const response = await axios.post('http://localhost:3001/api/usuarios/registro', formData);
+        if (response.status === 201) {
+          alert('Usuario registrado exitosamente');
+          // Redirigir al inicio de sesión o a otra página
+        }
+      } catch (error) {
+        console.error('Error al registrar el usuario:', error);
+        alert('Hubo un error al registrar el usuario');
+      }
     }
   };
 
@@ -313,6 +333,31 @@ const Register = () => {
                 />
                 {validFields.name && <ConfirmationIcon isValid={validFields.name} />}
                 {errors.name && <ErrorMessage>{errors.name}</ErrorMessage>}
+              </FormGroup>
+              <FormGroup>
+                <label htmlFor="id_type">Tipo de Identificación*</label>
+            <div style={{ position: 'relative' }}>
+              <FormControl
+                as="select" // Esto asegura que el campo sea un menú desplegable
+                id="id_type"
+                value={formData.id_type}
+                onChange={handleChange}
+                onFocus={handleFocus}
+                onBlur={handleBlur}
+                hasError={errors.id_type}
+                isValid={validFields.id_type}
+                isFocused={focusedFields.id_type}
+              >
+                <option value="">Selecciona un tipo</option>
+                <option value="CC">Cédula de Ciudadanía</option>
+                <option value="NIT">NIT</option>
+                <option value="TI">Tarjeta de Identidad</option>
+              </FormControl>
+              <ConfirmationIcon              
+             />
+            </div>
+                {validFields.id_type && <ConfirmationIcon isValid={validFields.id_type} />}
+                {errors.id_type && <ErrorMessage>{errors.id_type}</ErrorMessage>}
               </FormGroup>
               <FormGroup>
                 <label htmlFor="id">Documento / ID*</label>
@@ -412,6 +457,23 @@ const Register = () => {
                   isValid={validFields.state}
                   hasError={errors.state}
                   isFocused={focusedFields.state}
+                />
+                {validFields.city && <ConfirmationIcon isValid={validFields.city} />}
+                {errors.city && <ErrorMessage>{errors.city}</ErrorMessage>}
+              </FormGroup>
+              <FormGroup>
+                <label htmlFor="country">Nacionalidad*</label>
+                <FormControl
+                  type="text"
+                  id="country"
+                  placeholder="digita tu país de residencia"
+                  value={formData.country}
+                  onChange={handleChange}
+                  onFocus={handleFocus}
+                  onBlur={handleBlur}
+                  isValid={validFields.country}
+                  hasError={errors.country}
+                  isFocused={focusedFields.country}
                 />
                 {validFields.state && <ConfirmationIcon isValid={validFields.state} />}
                 {errors.state && <ErrorMessage>{errors.state}</ErrorMessage>}
