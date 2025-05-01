@@ -1,268 +1,170 @@
 import React from "react";
-import styled from "styled-components";
 import { Carousel } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../styles/specific/Home.css';
-import '../../styles/specific/buttons.css'; // Importa el archivo CSS para los botones
-
-const HomeContainer = styled.div`
-  margin-top: 100px;
-  text-align: center;
-  padding: 0 1rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background-color: #f9f9f9;
-
-  @media (max-width: 768px) {
-    margin-top: 50px;
-  }
-`;
-
-const Title = styled.h1`
-  font-size: 2.5rem;
-  color: #333;
-
-  @media (max-width: 768px) {
-    font-size: 2rem;
-  }
-`;
-
-const Subtitle = styled.h5`
-  font-size: 1.5rem;
-  color: #666;
-
-  @media (max-width: 768px) {
-    font-size: 1.2rem;
-  }
-`;
-
-const Description = styled.h4`
-  font-size: 1.2rem;
-  color: #555;
-  margin: 1rem 0;
-
-  @media (max-width: 768px) {
-    font-size: 1rem;
-  }
-`;
-
-const AsesoriasButton = styled.button`
-    background: #0AA1DD;
-    cursor: pointer;
-    border:  none;
-    padding: 16px 32px;
-    color: azure;
-    font-size: 24px;
-    font-weight: bold;
-    position: relative;
-    border-radius: 12px;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    transition: background-color 0.3s ease; /* Transición suave */
-
-  &:hover {
-    background: #095BC2; /* Cambia el fondo al posicionarse */
-  }
-
-  @media (max-width: 768px) {
-    font-size: 0.9rem;
-    padding: 0.4rem 0.8rem;
-  }
-`;
-
-const CarouselItemImage = styled.img`
-  width: 100%;
-  height: auto;
-`;
-
-const GalleryContainer = styled.div`
-  margin-top: 100px;
-  padding: 2rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background-color: #f9f9f9;
-  font-family: 'Open Sans', sans-serif;
-`;
-
-const SectionTitle = styled.h2`
-  font-size: 1.8rem;
-  color: #333;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  font-family: 'Montserrat', sans-serif;
-`;
-
-const SectionDescription = styled.p`
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 2rem;
-  font-family: 'Open Sans', sans-serif;
-`;
-
-const ImageGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1rem;
-  margin-bottom: 2rem;
-`;
-
-const ImageContainer = styled.div`
-  position: relative;
-`;
-
-const Image = styled.img`
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-`;
-
-const ImageDescription = styled.div`
-  position: absolute;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.6);
-  color: white;
-  width: 100%;
-  text-align: center;
-  padding: 0.5rem;
-  border-radius: 0 0 8px 8px;
-`;
-
-const VideoContainer = styled.div`
-  margin-bottom: 2rem;
-`;
-
-const VideoLink = styled.a`
-  color: #007bff;
-  text-decoration: none;
-  font-size: 1rem;
-
-  &:hover {
-    text-decoration: underline;
-  }
-`;
-
-const ProcessSection = styled.div`
-  margin-bottom: 3rem;
-`;
+import '../../styles/specific/buttons.css'; 
+import '../../styles/specific/buttons.css';
+import { BsFillBookmarksFill } from "react-icons/bs";
+import { BsFillBagCheckFill } from "react-icons/bs";
+import { AiFillTool } from "react-icons/ai";
+import { FaMedal } from "react-icons/fa";
 
 const Home = () => {
   return (
-    <HomeContainer style={{ marginTop: '100px' }}>
-      <img className='imagenfondo'
+    <div className="home-container" style={{ marginTop: '100px' }}>
+      <img className="imagenfondo"
            src="/oip.jpeg"
            alt="imagen de fondo" 
         />
       <span>
-        <Title>Decoraciones Ortiz</Title>
-        Aqui va el logo decortiz
-        <Subtitle>Distribuidor oficial</Subtitle>
-        <Description>Nuestras cortinas blackout, están diseñadas para ofrecer la máxima privacidad y control de luz en cualquier lugar o espacio.</Description>
+        <h1 className="title">Decoraciones Ortiz</h1>
+        <h3 className="subtitle">Distribuidor oficial</h3>
+        <p className="description">Nuestras cortinas blackout, están diseñadas para ofrecer la máxima privacidad y control de luz en cualquier lugar o espacio.</p>
       </span>
-      <AsesoriasButton>Asesorías</AsesoriasButton>
+      <button className="asesorias-button">Asesorías</button>
       
-      <Carousel className="HomeCarousel" interval={3000} indicators={true} controls={true}>
+      <Carousel className="HomeCarousel" interval={3000} indicators={false} controls={true} pause={false}> 
         <Carousel.Item>
-          <CarouselItemImage
-            src="/cortina1.jpg"
-            alt="Primera imagen"
+          <img className="carousel-item-image"
+               src="panel japones/panel-japones-08.webp"
+               alt="Primera imagen"
           />
           <Carousel.Caption>
-            <h3>Primera imagen</h3>
+            <h3></h3>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <CarouselItemImage
-            src="/cortina2.jpg"
-            alt="Segunda imagen"
+          <img className="carousel-item-image"
+               src="cortinas catalogo/img10.jpg"
+               alt="Segunda imagen"
           />
           <Carousel.Caption>
-            <h3>Segunda imagen</h3>
+            <h3></h3>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <CarouselItemImage
-            src="/cortina3.jpg"
-            alt="Tercera imagen"
+          <img className="carousel-item-image"
+               src="cortinas catalogo/img6.jpg"
+               alt="Tercera imagen"
           />
           <Carousel.Caption>
-            <h3>Tercera imagen</h3>
+            <h3></h3>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <CarouselItemImage
-            src="/cortina4.jpg"
-            alt="Cuarta imagen"
+          <img className="carousel-item-image"
+               src="cortinas catalogo/img2.jpg"
+               alt="Cuarta imagen"
           />
           <Carousel.Caption>
-            <h3>Cuarta imagen</h3>
+            <h3></h3>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <CarouselItemImage
-            src="/cortina5.jpg"
+          <img className="carousel-item-image"
+            src="Sheer elegance/sheer-elegance-01.webp"
             alt="Quinta imagen"
           />
           <Carousel.Caption>
-            <h3>Quinta imagen</h3>
+            <h3></h3>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
-      <Description>Aqui los h3 para cada imagen.</Description>
-      <Description>Aqui los selectores.</Description>
-      <Description>Brindamos experiencias y soluciones en cualquier ambiente.</Description>
-      <Description>Cortinas y persianas a medida...</Description>
-      <div className="iconsContainer">
+
+      <Carousel className="description-carousel" interval={3000} indicators-barra={true} controls={false} pause={false}>
+        <Carousel.Item>
+          <h3 className="carousel-text">Cortina elegante para sala de estar</h3>
+        </Carousel.Item>
+        <Carousel.Item>
+          <h3 className="carousel-text">Cortina enrollable moderna</h3>
+        </Carousel.Item>
+        <Carousel.Item>
+          <h3 className="carousel-text">Cortina blackout para dormitorio</h3>
+        </Carousel.Item>
+        <Carousel.Item>
+          <h3 className="carousel-text">Cortina de diseño minimalista</h3>
+        </Carousel.Item>
+        <Carousel.Item>
+          <h3 className="carousel-text">Cortina con estampado floral</h3>
+        </Carousel.Item>
+      </Carousel>
+
+      <h5 className="descrip1">Brindamos experiencias y soluciones en cualquier ambiente.</h5>
+      <h4 className="descrip2">Cortinas y persianas a medida...</h4>
+      <div className="icons-container">
         <strong>
-          <p>Buscamos ser los cortineros # 1 en servicio y atención !!!</p>
+          <div className="presentation-container">
+            <p className="presentation1">"Buscamos ser los cortineros #1 en servicio y atención"</p>
+            <div className="icono1">
+              <BsFillBagCheckFill className="icon" />
+              <p className="icon-text">Compras Online</p>
+            </div>
+            <div className="icono3">
+              <AiFillTool className="icon" />
+              <p className="icon-text">Instalación y Reparación </p>
+            </div>
+            <div className="icono2">
+              <BsFillBookmarksFill className="icon" />
+              <p className="icon-text">Vanguardia y Elegancía </p>
+            </div>
+            <div className="icono4">
+              <FaMedal className="icon" />
+              <p className="icon-text">Mejor Calidad Disponible </p>
+            </div>
+            <div className="icono5">
+              <BsFillBagCheckFill className="icon" />
+              <p className="icon-text">Compras Online</p> 
+             </div>
+             </div>
         </strong>
+        <p className="presentation1">En Decoraciones Ortiz, nuestra misión es transformar tus espacios con cortinas y persianas de la más alta calidad,
+             mientras ofrecemos un servicio excepcional y atención personalizada.
+              Entendemos que cada hogar y negocio tiene sus propias necesidades y estilo,
+               por lo que trabajamos incansablemente para asegurar que encuentres la solución perfecta.</p>
       </div>
-      <GalleryContainer>
-        <div>
-      <SectionTitle> Galería de Productos Destacados</SectionTitle>
-      <SectionDescription>Descubre algunos de nuestros productos más populares, diseñados para embellecer tus espacios.</SectionDescription>
-      <ImageGrid>
-        <ImageContainer>
-          <Image src="path-to-image1.jpg" alt="Descripción del producto" />
-          <ImageDescription>Descripción del producto o servicio</ImageDescription>
-        </ImageContainer>
-        {/* Repetir para más imágenes */}
-      </ImageGrid>
-      
-      <SectionTitle>Servicios Completados</SectionTitle>
-      <SectionDescription>Observa algunos de nuestros proyectos completados con éxito.</SectionDescription>
-      <VideoContainer>
-        <video width="100%" controls>
-          <source src="path-to-video1.mp4" type="video/mp4" />
-          Tu navegador no soporta la etiqueta de video.
-        </video>
-        <SectionDescription>Descripción del video</SectionDescription>
-      </VideoContainer>
-      <VideoLink href="https://www.youtube.com/watch?v=your-video-id" target="_blank">
-        Ver video en YouTube
-      </VideoLink>
-      
-      <ProcessSection>
-        <SectionTitle>Proceso de Trabajo</SectionTitle>
-        <SectionDescription>Conoce nuestro meticuloso proceso de trabajo desde el inicio hasta la finalización del proyecto.</SectionDescription>
-        <ImageGrid>
-          <ImageContainer>
-            <Image src="path-to-image-step1.jpg" alt="Inicio del proyecto" />
-            <ImageDescription>Inicio del proyecto</ImageDescription>
-          </ImageContainer>
-          <ImageContainer>
-            <Image src="path-to-image-step2.jpg" alt="Progreso del proyecto" />
-            <ImageDescription>Progreso del proyecto</ImageDescription>
-          </ImageContainer>
-          <ImageContainer>
-            <Image src="path-to-image-step3.jpg" alt="Finalización del proyecto" />
-            <ImageDescription>Finalización del proyecto</ImageDescription>
-          </ImageContainer>
-          {/* Repetir para más pasos */}
-        </ImageGrid>
-      </ProcessSection>
+      <div className="gallery-container">
+        <div className="gallery-content">
+          <strong>
+            <h1 className="gallery-title">Galería de Productos y Servicios</h1>
+            <h1 className="gallery-subtitle">Explora nuestra amplia gama de productos y servicios</h1>
+          </strong>
+          <div className="image-grid">
+            <div className="image-container">
+              <img className="image-gallery" src="Enrollables/enrollables04.webp"/>
+              <div className="image-description">Cortina Enrollable Tipo Screen en Tono Claro, Ideal para Controlar la Luz y Mantener la Privacidad con un Diseño Moderno y Minimalista.</div>
+            </div>
+
+                  </div>
+                
+                  <h2 className="section-title">Servicios Completados</h2>
+                  <p className="section-description">Observa algunos de nuestros proyectos completados con éxito.</p>
+                  <div className="video-container">
+                  <video width="80%" controls>
+                    <source src="Video/video3.mp4" type="video/mp4" />
+                  </video>
+                  <p className="section-description">En el anterior video se visualiza unas cortinas tipo panel japones con diseño y domotizada.  </p>
+                  </div>
+                  <div className="process-section">
+                  <h2 className="section-title">Proceso de Trabajo</h2>
+                  <p className="section-description">Conoce nuestro meticuloso proceso de trabajo desde el inicio hasta la finalización del proyecto.</p>
+                  <div className="image-grid">
+                    <div className="image-container">
+                    <img className="image" src="panel japones/panel-japones-02.webp" alt="Inicio del proyecto" />
+                    <div className="image-description">Inicio del proyecto</div>
+                    </div>
+                    <div className="image-container">
+                    <img className="image" src="panel japones/panel-japones-05.webp" alt="Progreso del proyecto" />
+                    <div className="image-description">Progreso del proyecto</div>
+                    </div>
+                    <div className="image-container">
+                    <img className="image" src="Sheer elegance/sheer-elegance-07.webp" alt="Finalización del proyecto" />
+                    <div className="image-description">Finalización del proyecto</div>
+                    </div>
+            </div>
+          </div>
         </div>
-      </GalleryContainer>    
-    </HomeContainer>
+      </div>    
+    </div>
   );
 }
 

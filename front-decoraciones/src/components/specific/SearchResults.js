@@ -1,27 +1,24 @@
 import React from 'react';
-import ProductPreview from './products/ProductPreview';
-import PropTypes from 'prop-types';
+import '../../styles/specific/buttons.css';
+import { FaCartPlus } from 'react-icons/fa';
 
 const SearchResults = ({ products }) => {
   return (
     <div className="row">
-      {products.map((product) => (
-        <div className="col-12 col-lg-4 col-md-6 col-sm-6" key={product.name}>
-          <ProductPreview product={product} />
+      {products.map((product, index) => (
+        <div className="col-12 col-lg-4 col-md-6 col-sm-6 container-product" key={index}>
+          <img src={product.image} alt={product.name} className="product-image" />
+          <h3 className="product-name">{product.name}</h3>
+          <p className="product-description">{product.description}</p>
+          <div className="botones">
+            <button className="boton-de-compra">Comprar</button>
+            <p/>
+            <button className="m-car"><FaCartPlus /></button>
+          </div>
         </div>
       ))}
     </div>
   );
-}
-
-SearchResults.propTypes = {
-  products: PropTypes.arrayOf(
-    PropTypes.shape({
-      image: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired,
-    })
-  ).isRequired,
 };
 
 export default SearchResults;

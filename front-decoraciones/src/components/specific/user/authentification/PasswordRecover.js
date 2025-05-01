@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import '../../../../styles/styles.css'; // Importa el archivo CSS con la imagen de fondo
+import '../../../../styles/styles.css'; 
 
 const PasswordRecoverContainer = styled.div`
   display: flex;

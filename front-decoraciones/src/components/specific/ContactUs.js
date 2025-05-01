@@ -19,29 +19,33 @@ const ContactContainer = styled.div`
 const Title = styled.h1`
   text-align: center;
   font-size: 2rem;
-  color: #333;
+  color: #000000;
   margin-top: 2rem;
   margin-bottom: 3rem;
   font-weight: bold;
-  font-family: 'Roboto', serif;
+  font-family: 'Georgia', serif;
 `;
+
 
 const Heading2 = styled.h2`
   margin-top: 2rem;
+  color: #000000;
+  text-align: center;
   margin-bottom: 3rem;
   font-size: 1.5rem;
   font-weight: bold;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Georgina', serif;
   color: #444;
 `;
 
 const Paragraph = styled.p`
   margin-top: 2rem;
   margin-bottom: 2.5rem;
-  font-size: 1rem;
-  color: #555;
-  line-height: 1.5;
-  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2rem; /* Cambia el tamaño de la letra */
+  color: #333333; /* Cambia el color de la letra */
+  line-height: 1.8; /* Cambia el espaciado entre líneas */
+  font-family: 'Georgina', serif; 
+  font-weight: 400; /* Cambia el grosor de la letra */
 `;
 
 const ContactUsForm = styled.form`

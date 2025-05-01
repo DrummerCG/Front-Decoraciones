@@ -12,7 +12,7 @@
   height: 100%;
   object-fit: cover;
   z-index: -1;
-  opacity: 0.3; /* Ajusta la opacidad según las necesidades */
+  opacity: 0.3; 
 }
 
 #catalog-buttons {
@@ -23,6 +23,99 @@
 }
 
 #catalog-buttons .btn {
-  margin: 5px; /* Separación entre los botones */
+  margin: 5px; 
+}
+
+
+.container1 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; 
+  justify-content: space-around;
+  padding: 20px;
+  background-color: rgb(255, 6, 6);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 5px;
+}
+
+/*Contenedores de los productos*/
+
+.container-product {
+  margin-bottom: 60px;
+  padding: 15px;
+  border: 3px solid #ffd900;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 350px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+
+.container-product img {
+  max-width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.product-name {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.product-description {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.container-product .btn {
+  background-color: #FF6000;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.container-product .btn:hover {
+  background-color: #cc4d00;
+}
+
+/*Container de catalogo*/
+
+
+.catalogo1 {
+  padding: 5px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 18px;
+  color: #000000;
+}
+
+
+/*Titulo y descripcion del catalogo*/
+
+.catalogo-title {
+  font-size: 2rem;
+  color: #000000;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.catalogo-description {
+  font-size: 1.2rem;
+  color: #000000;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 

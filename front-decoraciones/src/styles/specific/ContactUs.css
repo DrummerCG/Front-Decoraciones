@@ -1,0 +1,23 @@
+.asesoriasButton {
+  background-color: #1e8fffd0;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  cursor: pointer;
+}
+
+.asesoriasButton:hover {
+  background-color: #1E90FF;
+  color: #ffffff;
+  border-radius: 5px;
+  border: #000000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.asesoriasButton:active {
+  background-color: #1E90FF !important;
+  color: #ffffff !important;
+}
