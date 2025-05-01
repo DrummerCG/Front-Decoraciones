@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 import { IntlProvider } from 'react-intl';
@@ -22,10 +22,14 @@ import ContactUs from './specific/ContactUs';
 import Login from './specific/user/authentification/Login';
 import Register from './specific/user/authentification/Register';
 import PasswordRecover from './specific/user/authentification/PasswordRecover';
-import CrearFactura from './billing/crearFactura'; // Ruta actualizada
-import BuscarFactura from './billing/buscarFactura'; // Ruta actualizada
-import EditarFactura from './billing/editarFactura'; // Ruta actualizada
-import EliminarFactura from './billing/eliminarFactura'; // Ruta actualizada
+import NuevoUsuario from './specific/user/NuevoUsuario';
+import ListaUsuarios from './specific/user/ListaUsuarios';
+import EditarUsuario from './specific/user/EditarUsuario';
+import CrearFactura from './billing/crearFactura'; 
+import BuscarFactura from './billing/buscarFactura'; 
+import EditarFactura from './billing/editarFactura'; 
+import EliminarFactura from './billing/eliminarFactura'; 
+import Clients from './specific/clients/Clients';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/App.css';
 
@@ -39,6 +43,9 @@ const messages = {
 };
 
 const App = () => {
+  const [userRole] = useState('administrador'); // Cambia esto según el rol del usuario actual
+
+
   return (
     <IntlProvider locale="es" messages={messages['es']}>
       <div className='App'>
@@ -68,6 +75,10 @@ const App = () => {
               <Route path="/facturacion/buscar" element={<BuscarFactura />} />
               <Route path="/facturacion/editar" element={<EditarFactura />} />
               <Route path="/facturacion/eliminar" element={<EliminarFactura />} />
+              <Route path="/users/nuevo" element={<NuevoUsuario />} />
+              <Route path="/users/editar/:id" element={<EditarUsuario userRole={userRole} />} />
+              <Route path="/users/lista" element={<ListaUsuarios />} />
+              <Route path="/clients" element={<Clients />} />
             </Routes>
           </Container>
           <Footer />
