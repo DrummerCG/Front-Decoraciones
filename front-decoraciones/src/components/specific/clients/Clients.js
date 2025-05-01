@@ -61,8 +61,8 @@ const Clients = () => {
 
     return (
         <div>
-            <h1>Clients Management</h1>
-            <p>Manage your clients efficiently here.</p>
+            <h1>Gestión de Clientes</h1>
+            <p>Administre aquí los clientes de manera eficiente.</p>
             <SearchCriteria />
             <SearchResults clients={clients} />
             <AddClientModal handleModalToggle={handleModalToggle} showAddClientModal={showAddClientModal}/>
@@ -89,7 +89,7 @@ const SearchCriteria = () => {
                     >
                         <Form.Control
                             type="search"
-                            placeholder="Search"
+                            placeholder="Buscar"
                             className="me-2 rounded-pill d-flex"
                             aria-label="Search"
                             name="searchInput"

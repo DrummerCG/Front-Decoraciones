@@ -7,14 +7,14 @@ const AddClientModal = ({ handleModalToggle, showAddClientModal }) => {
     return (
         <Modal show={showAddClientModal} onHide={handleModalToggle}>
             <Modal.Header closeButton>
-                <Modal.Title>Add New Client</Modal.Title>
+                <Modal.Title>Agregar Nuevo Cliente</Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <SearchContactInfoState />
             </Modal.Body>
             <Modal.Footer>
                 <Button variant="secondary" onClick={handleModalToggle}>
-                    Close
+                    Cerrar
                 </Button>
             </Modal.Footer>
         </Modal>
@@ -49,13 +49,13 @@ const SearchContactInfoState = () => {
     return (
         <Form>
             <Form.Group className="mb-3" controlId="documentType">
-                <Form.Label>Document Type</Form.Label>
+                <Form.Label>Tipo de Documento</Form.Label>
                 <Form.Control
                     as="select"
                     value={documentType}
                     onChange={(e) => setDocumentType(e.target.value)}
                 >
-                    <option value="">Select document type</option>
+                    <option value="">Seleccione el Tipo de Documento</option>
                     {documentTypes.map((type, index) => (
                         <option key={index} value={type}>
                             {type}
@@ -64,16 +64,16 @@ const SearchContactInfoState = () => {
                 </Form.Control>
             </Form.Group>
             <Form.Group className="mb-3" controlId="document">
-                <Form.Label>Document</Form.Label>
+                <Form.Label>Documento</Form.Label>
                 <Form.Control
                     type="text"
-                    placeholder="Enter document"
+                    placeholder="Ingrese el número de documento"
                     value={document}
                     onChange={(e) => setDocument(e.target.value)}
                 />
             </Form.Group>
             <Button variant="primary" onClick={handleSearch}>
-                Search
+                Buscar
             </Button>
         </Form>
     );

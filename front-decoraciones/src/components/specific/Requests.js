@@ -18,13 +18,22 @@ const Title = styled.h2`
   margin-bottom: 1rem;
 `;
 
-const List = styled.ul`
-  list-style-type: none;
-  padding: 0;
+const Table = styled.table`
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
 `;
 
-const ListItem = styled.li`
-  margin-bottom: 1rem;
+const TableHeader = styled.th`
+  border: 1px solid #ddd;
+  padding: 8px;
+  background-color: #f4f4f4;
+  text-align: left;
+`;
+
+const TableCell = styled.td`
+  border: 1px solid #ddd;
+  padding: 8px;
 `;
 
 const LinkStyled = styled(Link)`
@@ -42,7 +51,9 @@ const Requests = () => {
   useEffect(() => {
     axios.get('http://localhost:3001/solicitudes')
       .then(response => {
-        setRequests(response.data);
+        // Ordenar las solicitudes por orden de entrada (si tienen un campo de fecha)
+        const sortedRequests = response.data.sort((a, b) => new Date(a.Fecha) - new Date(b.Fecha));
+        setRequests(sortedRequests);
       })
       .catch(error => {
         console.error('Error al obtener las solicitudes:', error);
@@ -52,13 +63,28 @@ const Requests = () => {
   return (
     <RequestsContainer>
       <Title>Solicitudes de Servicios</Title>
-      <List>
-        {requests.map((request, index) => (
-          <ListItem key={index}>
-            <LinkStyled to={`/solicitudes/${request.Id}`}>{request.Titulo}</LinkStyled>
-          </ListItem>
-        ))}
-      </List>
+      <Table>
+        <thead>
+          <tr>
+            <TableHeader>ID</TableHeader>
+            <TableHeader>Título</TableHeader>
+            <TableHeader>Fecha</TableHeader>
+            <TableHeader>Acciones</TableHeader>
+          </tr>
+        </thead>
+        <tbody>
+          {requests.map((request, index) => (
+            <tr key={index}>
+              <TableCell>{request.Id}</TableCell>
+              <TableCell>{request.Titulo}</TableCell>
+              <TableCell>{new Date(request.Fecha).toLocaleDateString()}</TableCell>
+              <TableCell>
+                <LinkStyled to={`/solicitudes/${request.Id}`}>Ver Detalles</LinkStyled>
+              </TableCell>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
     </RequestsContainer>
   );
 };
@@ -68,6 +94,7 @@ Requests.propTypes = {
     PropTypes.shape({
       Id: PropTypes.number.isRequired,
       Titulo: PropTypes.string.isRequired,
+      Fecha: PropTypes.string.isRequired, 
     })
   ),
 };
