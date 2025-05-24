@@ -1,4 +1,3 @@
-import React from 'react';
 import '../../styles/specific/buttons.css';
 import { FaCartPlus } from 'react-icons/fa';
 
@@ -12,8 +11,10 @@ const SearchResults = ({ products }) => {
           <p className="product-description">{product.description}</p>
           <div className="botones">
             <button className="boton-de-compra">Comprar</button>
-            <p/>
-            <button className="m-car"><FaCartPlus /></button>
+            <p />
+            <button className="m-car">
+              <FaCartPlus /> 
+            </button>
           </div>
         </div>
       ))}

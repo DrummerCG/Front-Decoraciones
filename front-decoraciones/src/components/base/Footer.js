@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../../styles/base/Footer.css';
+import { FaWhatsappSquare } from "react-icons/fa";
+import { FaFacebookSquare } from "react-icons/fa";
+import { FaSquareInstagram } from "react-icons/fa6";
 
 const Footer = () => {
   const sendWhatsapp = (selectedProduct) => {
@@ -33,13 +36,13 @@ const Footer = () => {
           <h5 className='Heading'>Redes Sociales</h5>
           <ul className='List'>
           <li className='ListItem'>
-            <a className='Link' href="https://wa.me/573107555966" target="_blank" rel="noopener noreferrer" style={{ color: 'white' }} onMouseOver={(e) => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={(e) => e.currentTarget.style.textDecoration = 'none'}>WhatsApp</a>
+            <a className='Link1' href="https://wa.me/573107555966" ><FaWhatsappSquare /></a>
             </li>
             <li className='ListItem'>
-              <a className='Link' href="https://www.facebook.com/share/19hkcs69RJ/" target="_blank" rel="noopener noreferrer">Facebook</a>
+              <a className='Link2' href="https://www.facebook.com/share/19hkcs69RJ/" ><FaFacebookSquare /></a>
             </li>
             <li className='ListItem'>
-              <a className='Link' href="https://www.instagram.com/pablo.emilioortiz" target="_blank" rel="noopener noreferrer" style={{ color: 'white', textDecoration: 'none' }} onMouseOver={(e) => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={(e) => e.currentTarget.style.textDecoration = 'none'}>Instagram</a>
+              <a className='Link3' href="https://www.instagram.com/pablo.emilioortiz"><FaSquareInstagram /></a>
             </li>
           </ul>
         </div>
@@ -54,6 +57,7 @@ const Footer = () => {
         </div>
         <div className='column'>
           <h5 className='Heading'>Ubicación</h5>
+          <img src='/Ubicación.png' className='Ubicacion' />
           <a href="https://www.google.com/maps?q=Calle+10+sur+%23+25-04+Barrio+Sina%C3%AD,+Neiva,+Huila"
            target="_blank" rel="noopener noreferrer"
             style={{ textDecoration: 'none', color: 'inherit' }} onMouseOver={(e) => e.currentTarget.style.textDecoration = 'underline'} onMouseOut={(e) => e.currentTarget.style.textDecoration = 'none'}

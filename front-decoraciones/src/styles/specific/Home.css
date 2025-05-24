@@ -60,14 +60,14 @@
 
 .carousel-control-next-icon,
 .carousel-control-prev-icon {
-  background-color: #E5A65E;
-  opacity: 6;
+  background-color: #FF6000;
+  opacity: 200;
 } 
 
 .carousel-control-prev-icon:hover,
 .carousel-control-next-icon:hover {
   background-color: #E5A65E; 
-  opacity: 0.5;
+  opacity: 0.8;
 }
 
 /*Carousel con imagenes*/
@@ -184,7 +184,7 @@
   font-size: 1rem;
   margin-bottom: 0;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  font-weight: bold;
+  font-weight: none;
   margin-top: 20px;
   margin-bottom: 10px;
 }
@@ -194,7 +194,7 @@
   font-size: 1rem;
   margin-bottom: 0;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  font-weight: bold;
+  font-weight: none;
   margin-top: 0px;
   margin-bottom: 15px;
 }
@@ -203,8 +203,18 @@
   color: #000000;
   font-size: 1rem;
   margin-bottom: 0.5;
-  font-weight: bold;
+  font-weight: none;
   font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-top: -15px;
+}
+
+.presentation2 {
+  color: #000000;
+  font-size: 1rem;
+  margin-bottom: 0.5;
+  font-weight: none;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-top: 40px;
 }
 
 .section-description {
@@ -222,7 +232,7 @@
 
 .gallery-title {
   color: #000000;
-  font-size: 3rem;
+  font-size: 2rem;
   margin-bottom: 0;
   font-weight: bold;
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -230,9 +240,9 @@
 
 .gallery-subtitle {
   color: #000000;
-  font-size: 2rem;
+  font-size: 1rem;
   margin-bottom: 1;
-  font-weight: bold;
+  font-weight: none;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
@@ -241,7 +251,7 @@
   height: 380px;
   object-fit: cover;
   margin: 1 relative;
-  margin-top: 2rem;
+  margin-top: 0.5 rem;
 }
 
 .image-gallery:hover {
@@ -251,17 +261,16 @@
 
 .image-description {
   color: #000000;
-  font-size: 1rem;
-  margin-bottom: 0;
+  font-size: 0.5rem;         
   font-family: Georgia, 'Times New Roman', Times, serif;
-  font-weight: bold;
+  font-weight: none ;
   margin-top: 20px;
   margin-bottom: 10px;
 }
 
 .section-title {
   color: #000000;
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: 0;
   margin-top: 30px;
   font-weight: bold;
@@ -270,11 +279,11 @@
 
 .section-description {
   color: #000000;
-  font-size: 1rem;
+  font-size: 0.9rem;
   margin-bottom: 0;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  font-weight: bold;
-  margin-top: 10px;
+  font-weight: none;
+  margin-top: 5px;
 }
 
 .video-container {
@@ -283,7 +292,7 @@
   height: 0;
   padding-bottom: 56.25%; 
   overflow: hidden;
-  margin-top: 2rem;
+  margin-top: 1rem;
   
 }
 
@@ -316,7 +325,7 @@
   font-size: 16px;
   color: #000000; /* Ajusta el color del texto */
   font-family: Georgia, 'Times New Roman', Times, serif;
-  font-weight: bold;
+  font-weight: none;
 }
 
 /*seccion de procesos*/
@@ -337,108 +346,120 @@
   flex-direction: column; 
   align-items: center;
   background-color: #ff62004d;
-  padding: 20px;
+  margin-top: 40px;
+  padding: 30px;
+  width: 1150px;
   border-radius: 15px;
   border: 3px solid #FF6000;
+  transform: translateX(0);
+  @media (min-width: 768px) {
+    transform: translateX(10px);
+  }
+  @media (min-width: 1200px) {
+    transform: translateX(0px);
+  }
+  @media (min-width: 1900px) {
+    transform: translateX(90px);
+  }
+}
+
+.icon-container {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  flex-wrap: inherit; 
+  width: 100%; 
+  gap: 20px; 
+  margin-top: 10px; 
+}
+
+.icon-group {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  text-align: center;
+}
+
+.presentation1 {
+  text-align: center;
+  font-size: 1rem;
+  margin-top: -30px;
+  margin-bottom: 160px;
+  color: #000000;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  display: inline-block;
+  white-space: nowrap; 
+  transform: translateX(0); 
+  @media (min-width: 1200px) {
+    transform: translateX(540px); 
+  }
+  @media (min-width: 1900px) {
+    transform: translateX(520px); 
+  }
 }
 
 .presentation-container .title {
   margin-bottom: 20px; 
 }
 
-.icon-container {
-  display: flex;
-  justify-content: center; 
-  flex-wrap: wrap;
-  gap: 20px; 
-}
-
-.icon {
-  display: flex;
-  flex-direction:row;
-  align-items: center;
-  width: 120px;
-  margin: 10px;
-  position: relative;
-}
-
-.icon img {
-  width: 50px;
-  height: auto;
-  margin-bottom: 8px;
-}
-
-.icon p {
-  font-size: 14px;
-  text-align: center;
-  margin: 0;
-}
-
-.icon-text {
-  color: #000000;
+.icon-group .icon-text {
+  margin-top: 6px; 
   font-size: 0.8rem;
-  margin-top: 1px;  
+  position: flex;
+  color: #000000;
+  font-weight: none;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  font-weight: bold;
+  display: inline-block;
+  white-space: nowrap;
+  transform: translateX(0);
+    @media (min-width: 768px) {
+    transform: translateX(-300px);
+    @media (min-width: 1200px) {
+      transform: translateX(-250px); 
+    }
+    @media (min-width: 1900px) {
+      transform: translateX(-230px); 
+    }
+  }
 }
 
-.icono1 {
-  display: flex;
-  color: #095bc2;
-  justify-content: center; 
-  align-items: center;
-  flex-direction: column; 
-  margin-top: 2rem;
-  margin-bottom: 2rem; 
-  height: auto; 
-  width: 20%;
-  font-size: 4rem; 
+.icon-group:nth-child(2) {
+  align-self: flex-start;
 }
 
-.icono2 {
-  color: #095bc2;
-  display: flex;
-  justify-content: center; 
-  align-items: center;
-  flex-direction: column; 
-  margin-top: 2rem;
-  margin-bottom: 2rem; 
-  height: auto; 
-  font-size: 4rem; 
+.icon-group:nth-child(3) {
+  align-self: flex-end;
 }
 
-.icono3 {
-  color: #095bc2;
-  display: flex;
-  justify-content: center; 
-  align-items: center;
-  flex-direction: column; 
-  margin-top: 2rem;
-  margin-bottom: 2rem; 
-  height: auto; 
-  font-size: 4rem; 
+.icon-group:nth-child(4) {
+  align-self: flex-start;
 }
 
-.icono4 {
-  color: #095bc2;
-  display: flex;
-  justify-content: center; 
-  align-items: center;
-  flex-direction: column; 
-  margin-top: 2rem;
-  margin-bottom: 2rem; 
-  font-size: 4rem; 
-  width: 85%;
+.icon-group:nth-child(5) {
+  align-self: flex-end;
 }
 
-.icono5 {
-  color: #095bc2;
-  display: flex;
-  justify-content: center; 
-  align-items: center;
-  flex-direction: column; 
-  margin-top: 2rem;
-  margin-bottom: 2rem; 
-  font-size: 4rem; 
-  width: 85%;
+.icon-group:nth-child(6) {
+  align-self: flex-start;
 }
+
+.icon-group:nth-child(7) {
+  align-self: flex-end;
+}
+
+.icon-group:nth-child(8) {
+  align-self: flex-start;
+}
+.icon {
+  font-size: 60px; 
+  color: #095bc2; 
+  transform: translateX(0);
+  @media (min-width: 1200px) {
+    transform: translateX(-250px);
+  }
+  @media (min-width: 1900px) {
+    transform: translateX(-225px); 
+  }
+}
+
+

@@ -8,6 +8,9 @@ import { BsFillBookmarksFill } from "react-icons/bs";
 import { BsFillBagCheckFill } from "react-icons/bs";
 import { AiFillTool } from "react-icons/ai";
 import { FaMedal } from "react-icons/fa";
+import { FcClock } from "react-icons/fc";
+import { SiHuggingface } from "react-icons/si";
+import { AiOutlineCheckSquare } from "react-icons/ai";
 
 const Home = () => {
   return (
@@ -91,37 +94,45 @@ const Home = () => {
 
       <h5 className="descrip1">Brindamos experiencias y soluciones en cualquier ambiente.</h5>
       <h4 className="descrip2">Cortinas y persianas a medida...</h4>
-      <div className="icons-container">
+      <div className="presentation-container">
         <strong>
-          <div className="presentation-container">
+          <div className="icon-container">
             <p className="presentation1">"Buscamos ser los cortineros #1 en servicio y atención"</p>
-            <div className="icono1">
+            <div className="icon-group" >
               <BsFillBagCheckFill className="icon" />
               <p className="icon-text">Compras Online</p>
             </div>
-            <div className="icono3">
+            <div className="icon-group ">
               <AiFillTool className="icon" />
-              <p className="icon-text">Instalación y Reparación </p>
+              <p className="icon-text">Instalación y Reparación</p>
             </div>
-            <div className="icono2">
+            <div className="icon-group ">
               <BsFillBookmarksFill className="icon" />
-              <p className="icon-text">Vanguardia y Elegancía </p>
+              <p className="icon-text">Vanguardia y Elegancia</p>
             </div>
-            <div className="icono4">
+            <div className="icon-group ">
               <FaMedal className="icon" />
-              <p className="icon-text">Mejor Calidad Disponible </p>
+              <p className="icon-text">Mejor Calidad</p>
             </div>
-            <div className="icono5">
-              <BsFillBagCheckFill className="icon" />
-              <p className="icon-text">Compras Online</p> 
-             </div>
-             </div>
+            <div className="icon-group ">
+              <FcClock className="icon" />
+              <p className="icon-text">Preparación y Experiencia</p> 
+              </div>
+              <div className="icon-group ">
+              <SiHuggingface className="icon" />
+              <p className="icon-text">Atención y Servicio</p>
+              </div>
+            <div className="icon-group ">    
+              <AiOutlineCheckSquare className="icon" />
+              <p className="icon-text">Excelentes Precios</p>
+              </div>
+          </div>
         </strong>
-        <p className="presentation1">En Decoraciones Ortiz, nuestra misión es transformar tus espacios con cortinas y persianas de la más alta calidad,
+       </div>
+      <p className="presentation2">En Decoraciones Ortiz, nuestra misión es transformar tus espacios con cortinas y persianas de la más alta calidad,
              mientras ofrecemos un servicio excepcional y atención personalizada.
               Entendemos que cada hogar y negocio tiene sus propias necesidades y estilo,
                por lo que trabajamos incansablemente para asegurar que encuentres la solución perfecta.</p>
-      </div>
       <div className="gallery-container">
         <div className="gallery-content">
           <strong>
@@ -133,8 +144,7 @@ const Home = () => {
               <img className="image-gallery" src="Enrollables/enrollables04.webp"/>
               <div className="image-description">Cortina Enrollable Tipo Screen en Tono Claro, Ideal para Controlar la Luz y Mantener la Privacidad con un Diseño Moderno y Minimalista.</div>
             </div>
-
-                  </div>
+            </div> 
                 
                   <h2 className="section-title">Servicios Completados</h2>
                   <p className="section-description">Observa algunos de nuestros proyectos completados con éxito.</p>

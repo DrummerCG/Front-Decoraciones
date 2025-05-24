@@ -24,175 +24,197 @@ const listaProductosMock = [
     image: 'cortinas catalogo/img1.jpg',
     name: 'Panel Japonés',
     category: 'Panel japones',
-    description: <h1 className="catalogo1">Protección Solar Inteligente y con Estilo, Precio desde los $80.000 m2</h1>,
+    description: 'Panel japonés moderno, ideal para grandes ventanales. Precio desde: $80.000/m2',
+    price: 80000
   },
-
   {
     image: 'panel japones/panel-japones-02.webp',
-    name: 'Panel Japones ',
+    name: 'Panel Japonés Gris',
     category: 'Panel japones',
-    description: <h2 className="catalogo1">Minimalismo y Funcionalidad en tu Ventana, 300cm x 250cm, $800.000</h2>
+    description: 'Panel japonés en tono gris, aporta elegancia y control solar. Precio desde: $120.000/m2',
+    price: 120000
   },
-
   {
     image: 'panel japones/panel-japones-03.webp',
-    name: 'Panel Japones ',
+    name: 'Panel Japonés Blanco',
     category: 'Panel japones',
-    description: <h2 className="catalogo1">Minimalismo y Funcionalidad en tu Ventana, 300cm x 250cm, $800.000</h2>
+    description: 'Panel japonés blanco, minimalista y funcional para cualquier ambiente. Precio desde: $110.000/m2',
+    price: 110000
   },
-
   {
     image: 'panel japones/panel-japones-04.webp',
-    name: 'Panel Japones ',
+    name: 'Panel Japonés Texturizado',
     category: 'Panel japones',
-    description: <h2 className="catalogo1">Minimalismo y Funcionalidad en tu Ventana, 300cm x 250cm, $800.000</h2>
+    description: 'Panel japonés con textura, ideal para dar un toque sofisticado. Precio desde: $130.000/m2',
+    price: 130000
   },
-
   {
     image: 'panel japones/panel-japones-05.webp',
-    name: 'Panel Japones ',
+    name: 'Panel Japonés Beige',
     category: 'Panel japones',
-    description: <h2 className="catalogo1">Minimalismo y Funcionalidad en tu Ventana, 300cm x 250cm, $800.000</h2>
+    description: 'Panel japonés beige, combina con estilos cálidos y modernos. Precio desde: $100.000/m2',
+    price: 100000
   },
-
   {
     image: 'panel japones/panel-japones-06.webp',
-    name: 'Panel Japones ',
+    name: 'Panel Japonés Oscuro',
     category: 'Panel japones',
-    description: <h2 className="catalogo1">Minimalismo y Funcionalidad en tu Ventana, 300cm x 250cm, $800.000</h2>
+    description: 'Panel japonés oscuro, máxima privacidad y diseño contemporáneo. Precio desde: $135.000/m2',
+    price: 135000
   },
-
   {
     image: 'panel japones/panel-japones-07.webp',
-    name: 'Panel Japones ',
+    name: 'Panel Japonés Estampado',
     category: 'Panel japones',
-    description: <h2 className="catalogo1">Minimalismo y Funcionalidad en tu Ventana, 300cm x 250cm, $800.000</h2>
+    description: 'Panel japonés con estampado sutil, perfecto para espacios juveniles. Precio desde: $125.000/m2',
+    price: 125000
   },
-
   {
     image: 'cortinas catalogo/img11.jpg',
-    name: 'Panel Japones ',
+    name: 'Panel Japonés Clásico',
     category: 'Panel japones',
-    description: <h2 className="catalogo1">Minimalismo y Funcionalidad en tu Ventana, 300cm x 250cm, $800.000</h2>
+    description: 'Panel japonés clásico, versatilidad y elegancia en un solo producto. Precio desde: $100.000/m2',
+    price: 100000
   },
-
   {
     image: 'panel japones/panel-japones-08.webp',
-    name: 'Panel Japones ',
+    name: 'Panel Japonés Natural',
     category: 'Panel japones',
-    description: <h2 className="catalogo1">Minimalismo y Funcionalidad en tu Ventana, 300cm x 250cm, $800.000</h2>
+    description: 'Panel japonés en tonos naturales, ideal para ambientes relajados. Precio desde: $115.000/m2',
+    price: 115000
   },
-
   {
     image: 'cortinas catalogo/img3.jpg',
-    name: 'Cortina Enrollable ',
+    name: 'Cortina Enrollable Blanca',
     category: 'Cortina',
-    description: <h3 className="catalogo1">La Practicidad y versatilidad que Buscabas, 240cm x 180cm, $140.000</h3>
+    description: 'Cortina enrollable blanca, fácil de limpiar y muy práctica. Precio desde: $90.000/m2',
+    price: 90000
   },
-
   {
     image: 'Enrollables/enrollables01.webp',
-    name: 'Cortina Enrollable ',
+    name: 'Cortina Enrollable Gris',
     category: 'Cortina',
-    description: <h3 className="catalogo1">La Practicidad y versatilidad que Buscabas, 240cm x 180cm, $140.000</h3>
+    description: 'Cortina enrollable gris, perfecta para oficinas y estudios. Precio desde: $95.000/m2',
+    price: 95000
   },
-
   {
     image: 'Enrollables/enrollables02.webp',
-    name: 'Cortina Enrollable ',
+    name: 'Cortina Enrollable Blackout',
     category: 'Cortina',
-    description: <h3 className="catalogo1">La Practicidad y versatilidad que Buscabas, 240cm x 180cm, $140.000</h3>
+    description: 'Cortina enrollable blackout, máxima oscuridad y privacidad. Precio desde: $110.000/m2',
+    price: 110000
   },
-
   {
     image: 'Enrollables/enrollables03.webp',
-    name: 'Cortina Enrollable ',
+    name: 'Cortina Enrollable Beige',
     category: 'Cortina',
-    description: <h3 className="catalogo1">La Practicidad y versatilidad que Buscabas, 240cm x 180cm, $140.000</h3>
+    description: 'Cortina enrollable beige, aporta calidez y confort. Precio desde: $92.000/m2',
+    price: 92000
   },
-
   {
     image: 'Enrollables/enrollables04.webp',
-    name: 'Cortina Enrollable ',
+    name: 'Cortina Enrollable Texturizada',
     category: 'Cortina',
-    description: <h3 className="catalogo1">La Practicidad y versatilidad que Buscabas, 240cm x 180cm, $140.000</h3>
+    description: 'Cortina enrollable con textura, diseño moderno y elegante. Precio desde: $98.000/m2',
+    price: 98000
   },
-
   {
     image: 'Enrollables/enrollables05.webp',
-    name: 'Cortina Enrollable ',
+    name: 'Cortina Enrollable Azul',
     category: 'Cortina',
-    description: <h3 className="catalogo1">La Practicidad y versatilidad que Buscabas, 240cm x 180cm, $140.000</h3>
+    description: 'Cortina enrollable azul, ideal para habitaciones juveniles. Precio desde: $93.000/m2',
+    price: 93000
   },
-
   {
     image: 'Enrollables/enrollables07.webp',
-    name: 'Cortina Enrollable ',
+    name: 'Cortina Enrollable Verde',
     category: 'Cortina',
-    description: <h3 className="catalogo1">La Practicidad y versatilidad que Buscabas, 240cm x 180cm, $140.000</h3>
+    description: 'Cortina enrollable verde, aporta frescura y vitalidad. Precio desde: $96.000/m2',
+    price: 96000
   },
-
   {
     image: 'Enrollables/enrollables08.webp',
-    name: 'Cortina Enrollable ',
+    name: 'Cortina Enrollable Estampada',
     category: 'Cortina',
-    description: <h3 className="catalogo1">La Practicidad y versatilidad que Buscabas, 240cm x 180cm, $140.000</h3>
+    description: 'Cortina enrollable con estampado moderno, ideal para salas. Precio desde: $99.000/m2',
+    price: 99000
   },
-
-
   {
     image: 'Enrollables/enrollables01.webp',
-    name: 'Cortina Enrollabl',  
+    name: 'Cortina Blackout Premium',
     category: 'Cortina',
-    description: <h4 className="catalogo1"> Cortina Blackout, Total Privacidad y Oscuridad, 160cm x 180cm, $250.000 </h4>
+    description: 'Cortina blackout premium, total privacidad y oscuridad. Precio desde: $130.000/m2',
+    price: 130000
   },
-
   {
     image: 'cortinas catalogo/img4.jpg',
-    name: 'Cortina enrollable en screen',
-    Category: 'Cortina',
-    description: <h5 className="catalogo1">Tejido Screen Microperforado, Resistente y Duradero, 120cm x220cm, $220.000 </h5>
+    name: 'Cortina Enrollable Screen',
+    category: 'Cortina',
+    description: 'Cortina enrollable en screen microperforado, resistente y duradera. Precio desde: $120.000/m2',
+    price: 120000
   },
   {
     image: 'cortinas catalogo/img5.jpg',
-    name: 'Cortina Enrollable en Screen',
+    name: 'Cortina Enrollable Día y Noche',
     category: 'Cortina',
-    description: <h6 className="catalogo1">Privacidad Durante el Día y la Noche, 140cm x 230cm, $239.000 </h6>
+    description: 'Cortina enrollable día y noche, controla la luz a tu gusto. Precio desde: $125.000/m2',
+    price: 125000
   },
   {
     image: 'cortinas catalogo/img9.jpg',
-    category: 'sher elegance',
-    name: 'sher elegance',
-    description: <h7 className="catalogo1">Controla tu Luz con Eleganci6a y Estilo, 130cm x 180cm, $200.000 </h7>
+    name: 'Sheer Elegance',
+    category: 'Sheer elegance',
+    description: 'Cortina sheer elegance, controla la luz con elegancia. Precio desde: $100.000/m2',
+    price: 100000
   },
   {
     image: 'cortinas catalogo/img1.jpg',
-    Category: 'Persiana Vertical',
-    name: 'Persiana Verticales',
-    description: <h8 className="catalogo1">Persiana Vertical de Tela, 160cm x 220cm, $300.000 </h8>
+    name: 'Persiana Vertical Tela',
+    category: 'Persiana Vertical',
+    description: 'Persiana vertical de tela, ideal para grandes ventanales. Precio desde: $110.000/m2',
+    price: 110000
   },
   {
     image: 'cortinas catalogo/img11.jpg',
-    Category: 'Persiana Vertical',
-    name: 'Persiana Verticals',
-    description: <h9 className="catalogo1">Cortinas pvc de Facil Limpieza y Gran Cobertura, 200cm x 215cm, $350.000 </h9>
+    name: 'Persiana Vertical PVC',
+    category: 'Persiana Vertical',
+    description: 'Persiana vertical en PVC, fácil limpieza y gran cobertura. Precio desde: $120.000/m2',
+    price: 120000
   },
   {
     image: 'Verticales/persiana-vertical-07.webp',
-    Category: 'Persiana Vertical',
-    name: 'Persiana Verticales',
-    description: <h10 classsName="catalogo1">No incluye el candelabro </h10>
+    name: 'Persiana Vertical Moderna',
+    category: 'Persiana Vertical',
+    description: 'Persiana vertical moderna, diseño actual y funcional. Precio desde: $115.000/m2',
+    price: 115000
   },
   {
-    image: 'verticales/persiana-vertical-04.webp',
-    Category: 'Persiana Vertical',
-    name: 'Persiana Verticales',
-    description: <h11 className="catalogo1">No incluye el candelabro </h11>
+    image: 'Sheer elegance/sheer-elegance-01.webp',
+    name: 'Sheer Elegance Blanco',
+    category: 'Sheer elegance',
+    description: 'Cortina sheer elegance blanca, máxima suavidad y control de luz. Precio desde: $105.000/m2',
+    price: 105000
   },
   {
-    image: 'https://media.istockphoto.com/photos/fabric-grunge-picture-id175499634?k=6&m=175499634&s=612x612&w=0&h=BgLJOai2ZCydJ0Eo9KAiUmgcA9P35NM89jhiTBnz2Mc=',
-    name: 'Cortina con destroyer (triplicado)',
-    description: 'La mejor opción para ventilación natural.'
+    image: 'Sheer elegance/sheer-elegance-05.webp',
+    name: 'Sheer Elegance Gris',
+    category: 'Sheer elegance',
+    description: 'Cortina sheer elegance gris, elegancia y funcionalidad. Precio desde: $108.000/m2',
+    price: 108000
+  },
+  {
+    image: 'Sheer elegance/sheer-elegance-03.webp',
+    name: 'Sheer Elegance Beige',
+    category: 'Sheer elegance',
+    description: 'Cortina sheer elegance beige, ideal para ambientes cálidos. Precio desde: $106.000/m2',
+    price: 106000
+  },
+  {
+    image: 'Sheer elegance/sheer-elegance-04.webp',
+    name: 'Sheer Elegance Estampada',
+    category: 'Sheer elegance',
+    description: 'Cortina sheer elegance estampada, diseño exclusivo y moderno. Precio desde: $112.000/m2',
+    price: 112000
   },
 ];
 

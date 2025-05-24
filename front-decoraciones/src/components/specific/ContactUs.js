@@ -2,6 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import '../../styles/specific/buttons.css'; // Importa el archivo CSS para los botones
 import '../../styles/specific/ContactUs.css'; // Importa el archivo CSS para ContactUs
+import { FaFacebookSquare } from "react-icons/fa";
+import { FaSquareInstagram } from "react-icons/fa6";
+import { FaSquareXTwitter } from "react-icons/fa6";
 
 const ContactContainer = styled.div`
   display: grid;
@@ -142,7 +145,7 @@ const ContactUs = () => {
       <Paragraph>
         <b>Síguenos en nuestras redes sociales:</b>
         <br />
-        <a href="https://www.facebook.com/share/19hkcs69RJ/">Facebook</a> | <a href="https://twitter.com">X</a> | <a href="https://www.instagram.com/pablo.emilioortiz" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.facebook.com/share/19hkcs69RJ/"><FaFacebookSquare /></a> | <a href="https://twitter.com"><FaSquareXTwitter /></a> | <a href="https://www.instagram.com/pablo.emilioortiz" target="_blank" rel="noopener noreferrer"><FaSquareInstagram /></a>
       </Paragraph>
       <Paragraph>¿Necesitas más información sobre algún tipo de cortina, accesorio o servicio en particular? <b>¡ Estamos aquí !</b>, No dudes en contactarnos y preguntarnos. Podemos ayudarte a elegir tu cortina o accesorio ideal para tu hogar o espacio especial.
       </Paragraph>
