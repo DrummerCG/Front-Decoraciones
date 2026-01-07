@@ -1,23 +1,30 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import '../../../../styles/styles.css'; // Importa el archivo CSS con la imagen de fondo
 
 const LoginContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
+  height: auto;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  padding: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
 `;
 
 const Card = styled.div`
-  border: 3px solid #0E76FF;
+  border: 5px solid #0AA1DD;
   border-radius: 8px;
   padding: 2rem;
   width: 100%;
-  max-width: 500px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  max-width: 600px; // Ajusta el tamaño máximo del contenedor
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
 `;
 
@@ -26,7 +33,7 @@ const CardHeader = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-bottom: 3px solid #0E76FF;
+  border-bottom: 5px solid #0AA1DD;
   padding-bottom: 1rem;
 `;
 
@@ -44,13 +51,13 @@ const FormGroup = styled.div`
 const FormControl = styled.input`
   width: 100%;
   padding: 0.5rem;
-  border: 1px solid #ff980e;
-  border-radius: 4px;
-  margin-bottom: 1rem;
+  border: 1px solid #FF6000;
+  border-radius: 3px;
+  margin-bottom: 0.5rem;
 `;
 
 const ButtonPrimary = styled.button`
-  background-color: #0E76FF;
+  background-color: #0AA1DD;
   color: white;
   border: none;
   padding: 0.5rem 1rem;
@@ -71,9 +78,9 @@ const ActionGroup = styled.div`
 `;
 
 const LinkStyled = styled(Link)`
-  color: black;
+  color: #3C3D37;
   text-decoration: none;
-  margin-top: 1rem;
+  margin-top: -2px;
 `;
 
 const CheckGroup = styled.div`
@@ -90,57 +97,77 @@ const CheckBoxWrapper = styled.div`
 `;
 
 const Heading5 = styled.h5`
-  color: #FF980E; /* Color naranja */
+  color: #FF6000; /* Color naranja */
   margin-bottom: 0.5rem;
 `;
 
 const Heading2 = styled.h2`
-  margin: 0;
+  margin-bottom: 1rem;
+`;
+
+const ImageStyled = styled.img`
+  width: 80%; 
+  height: auto;
+  display: block;
+  margin-top: 7px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3px;
 `;
 
 const Login = () => {
   return (
-    <div><img className='imagenfondo'
-      src="/oip.jpeg"
-      alt="imagen de fondo" />
-    <LoginContainer>
-      <Card>
-        <CardHeader>
-          <Heading5>Hola, Bienvenido(a)</Heading5>
-          <Heading2>Inicia Sesión...</Heading2>
-          <button className="close-button">&times;</button>
-        </CardHeader>
-        <CardBody>
-          <form>
-            <FormGroup>
-              <label htmlFor="formBasicEmail">Correo electrónico</label>
-              <FormControl type="email" id="formBasicEmail" placeholder="digitaaquí@tucorreo.com" />
-            </FormGroup>
-            <FormGroup>
-              <label htmlFor="formBasicPassword">Contraseña</label>
-              <FormControl type="password" id="formBasicPassword" placeholder="digita tu contraseña" />
-            </FormGroup>
-            <CheckGroup>
-              <CheckBoxWrapper>
-                <input type="checkbox" id="rememberMe" />
-                <label htmlFor="rememberMe" style={{ marginLeft: '0.5rem' }}>Recordarme</label>
-              </CheckBoxWrapper>
-              <LinkStyled to="/password-recover">
-                ¿Olvidaste tu contraseña?
-              </LinkStyled>
-            </CheckGroup>
-            <ActionGroup>
-              <ButtonPrimary type="submit">
-                Iniciar Sesión
-              </ButtonPrimary>
-              <LinkStyled to="/sign-in">
-                ¿No tienes cuenta? Regístrate
-              </LinkStyled>
-            </ActionGroup>
-          </form>
-        </CardBody>
-      </Card>
-    </LoginContainer>
+    <div style={{ marginTop: '100px' }}>
+      <img className='imagenfondo'
+       src="/oip.jpeg"
+       alt="imagen de fondo" />
+      <LoginContainer>
+        <Card>
+          <ImageStyled
+            className='inisesion'
+            src="/inisesion.jpg"
+            alt="inisesion"
+          />
+          <br />
+          <Heading5><strong>Hola, Bienvenido(a)</strong></Heading5>
+            <Heading2>Inicia Sesión...</Heading2>
+          <br />
+          <h6>"En Decoraciones Ortiz... Nuestra meta es brindar comodidad, estilo y satisfacción para cada hogar.</h6>
+          <br />
+          <CardHeader>
+            <h6><b>Ingresa tu correo electrónico y contraseña.</b></h6>
+          </CardHeader>
+          <CardBody>
+            <form>
+              <FormGroup>
+                <label htmlFor="formBasicEmail">Correo electrónico</label>
+                <FormControl type="email" id="formBasicEmail" placeholder="digitaaquí@tucorreo.com" />
+              </FormGroup>
+              <FormGroup>
+                <label htmlFor="formBasicPassword">Contraseña</label>
+                <FormControl type="password" id="formBasicPassword" placeholder="digita tu contraseña" />
+              </FormGroup>
+              <CheckGroup>
+                <CheckBoxWrapper>
+                  <input type="checkbox" id="rememberMe" />
+                  <label htmlFor="rememberMe" style={{ marginLeft: '0.5rem' }}>Recordarme.</label>
+                </CheckBoxWrapper>
+                <LinkStyled to="/password-recover">
+                  <strong>¿Olvidaste tu contraseña?</strong>
+                </LinkStyled>
+              </CheckGroup>
+              <ActionGroup>
+                <ButtonPrimary type="submit">
+                  Iniciar Sesión
+                </ButtonPrimary>
+                <LinkStyled to="/sign-in">
+                  ¿No tienes cuenta? <strong>Regístrate</strong>
+                </LinkStyled>
+              </ActionGroup>
+            </form>
+          </CardBody>
+        </Card>
+      </LoginContainer>
     </div>
   );
 };

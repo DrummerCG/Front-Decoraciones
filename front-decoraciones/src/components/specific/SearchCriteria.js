@@ -23,7 +23,25 @@ const SearchCriteria = () => {
           </Form>
         </Col>
         <Col sm={12} md={3}>
-          filtros
+          <Form>
+            <Form.Group controlId="categoryFilter">
+              <Form.Label>Categoría</Form.Label>
+              <Form.Control as="select">
+                <option>Todos</option>
+                <option>Categoría 1</option>
+                <option>Categoría 2</option>
+                <option>Categoría 3</option>
+              </Form.Control>
+            </Form.Group>
+            <Form.Group controlId="priceRangeFilter">
+              <Form.Label>Rango de Precio</Form.Label>
+              <Form.Control type="number" placeholder="Mínimo" />
+              <Form.Control type="number" placeholder="Máximo" className="mt-2" />
+            </Form.Group>
+            <Button variant="primary" type="submit" className="mt-3">
+              Aplicar Filtros
+            </Button>
+          </Form>
         </Col>
       </Row>
     </Container>

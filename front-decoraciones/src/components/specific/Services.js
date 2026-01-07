@@ -1,82 +1,108 @@
 import React from "react";
 import styled from "styled-components";
-import { Button } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '../../styles/specific/Services.css';
+import { Link } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css'; // Estilos //
+import '../../styles/specific/Services.css'; //Imagen de fondo //
 
-const StyledButton = styled(Button)`
-  background-color: ${props => getBackgroundColor(props.variant)}; /* Fondo según el variant */
-  border: 3px solid ${props => getBackgroundColor(props.variant)}; /* Borde según el variant */
-  color: white;
-  cursor: pointer;
+const ServicesContainer = styled.div`
+  margin-top: 100px;
+  margin-bottom: 3rem;
+  width: 70%;
+  margin-left: 15%;
+  padding: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  font-family: 'Open Sans', sans-serif;
+`;
+
+const Heading2 = styled.h2`
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  color: #444;
+`;
+
+const Paragraph = styled.p`
+  margin-top: 3rem;
+  margin-bottom: 2.5rem;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+  font-family: 'Open Sans', sans-serif;
+`;
+
+const LinkStyled = styled(Link)`
+  color: #007bff;
+  text-decoration: none;
 
   &:hover {
-    background-color: ${props => lightenColor(props.variant)}; /* Color de fondo al pasar el mouse */
-    border: 3px solid ${props => getBackgroundColor(props.variant)}; /* Borde del mismo color al pasar el mouse */
-    color: black; /* Color del texto al pasar el mouse */
-  }
-
-  &:active {
-    background-color: ${props => getBackgroundColor(props.variant)}; /* Fondo según el variant */
-    border: 3px solid ${props => getBackgroundColor(props.variant)}; /* Borde según el variant */
-    color: white; /* Mantener color blanco del texto */
+    text-decoration: underline;
   }
 `;
 
-function getBackgroundColor(variant) {
-  switch (variant) {
-    case 'primary':
-      return '#007bff'; // Azul para primary
-    case 'success':
-      return '#28a745'; // Verde para success
-    case 'warning':
-      return '#FF6000'; // Naranja para warning
-    case 'danger':
-      return '#dc3545'; // Rojo para danger
-    case 'info':
-      return '#17a2b8'; // Cian para info
-    default:
-      return '#3C3D37'; // Fondo predeterminado
-  }
-}
+const List = styled.ul`
+  list-style-type: none;
+  padding: 0;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-family: 'Raleway', sans-serif;
+`;
 
-function lightenColor(variant) {
-  switch (variant) {
-    case 'primary':
-      return '#85b5ff'; // Azul claro para primary
-    case 'success':
-      return '#7fcf8a'; // Verde claro para success
-    case 'warning':
-      return '#FFB87F'; // Naranja claro para warning
-    case 'danger':
-      return '#f28d8d'; // Rojo claro para danger
-    case 'info':
-      return '#a6d8e4'; // Cian claro para info
-    default:
-      return '#8C8C8C'; // Fondo claro predeterminado
-  }
-}
+const ListItem = styled.li`
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.3rem;
+`;
+
+const Title = styled.h1`
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  font-weight: bold;
+  font-family: 'Roboto', serif;
+`;
 
 const Services = () => {
   return (
     <div>
       <img className='imagenfondo' src="/oip.jpeg" alt="imagen de fondo" />
-      <div className="ServicesContainer">
-        <h1 className="Empresa">¿Necesitas más?</h1>
-        <h5 className="Descrip">Somos los que pensamos en la comodidad y seguridad para tu servicio. Selecciona una de las opciones en las cuales deseas realizar una solicitud.</h5>
-        <div id='services-buttons' className="row mb-3">
-          <StyledButton variant="primary" className="m-2">Instalaciones</StyledButton>
-          <StyledButton variant="success" className="m-2">Mantenimiento</StyledButton>
-          <StyledButton variant="warning" className="m-2">Reparación</StyledButton>
-          <StyledButton variant="danger" className="m-2">PQRS</StyledButton>
-          <StyledButton variant="info" className="m-2">Garantías</StyledButton>
+      <ServicesContainer>
+        <Title>Nuestros Servicios</Title>
+        <Paragraph>"Pensados para dar soluciones, comodidad, seguridad y conformidad a tus espacios, con la mayor facilidad y economía al alcance de todos nuestros clientes y usuarios. 
+          <br />Por favor, selecciona en el siguiente listado una de las opciones de tu gusto o interés en la cual deseas realizar una solicitud de asistencia."</Paragraph>
+        <div className="services-list">
+          <Heading2>Servicios disponibles</Heading2>
+          <List>
+            <ListItem>
+              <LinkStyled to="/installations"><strong>Instalaciones</strong></LinkStyled>
+            </ListItem>
+            <ListItem>
+              <LinkStyled to="/maintenance"><strong>Mantenimiento</strong></LinkStyled>
+            </ListItem>
+            <ListItem>
+              <LinkStyled to="/repairs"><strong>Reparaciones</strong></LinkStyled>
+            </ListItem>
+            <ListItem>
+              <LinkStyled to="/warranties"><strong>Garantías</strong></LinkStyled>
+            </ListItem>
+            <ListItem>
+              <LinkStyled to="/pqrs"><strong>PQRS</strong></LinkStyled>
+            </ListItem>
+          </List>
+          <Paragraph>En <b>Decoraciones Ortiz</b>, ofrecemos nuestros productos y servicios con la más alta calidad para asegurar el mejor resultado y satisfacción. Nuestros expertos garantizan una atención completa y enfocada en cada detalle, adaptándose a tus necesidades de funcionalidad, estilo y estética.</Paragraph>
         </div>
-        <h6 className="Descrip">Brindamos experiencias y soluciones en cualquier lugar o espacio.</h6>
-      </div>
+      </ServicesContainer>
     </div>
   );
 }
 
-Services.protoTypes = {};
+Services.propTypes = {};
 
 export default Services;
